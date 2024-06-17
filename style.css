@@ -1,59 +1,159 @@
-.countdown{
-    --number-color: rgb(23, 23, 251);
-    --text-color: hsl(0, 21%, 90%);
-    --dot-color: hsl(0 0% 10%);
-    --dot-color-remaining: hsl(132, 100%, 50%);
-    --dot-color-active: hsl(0 100% 50%);
-    font-family: system-ui, sans-serif;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    width: min(60rem, 100%);
-    margin-inline: auto;
-    container: inline-size;
-    > .part {
-      aspect-ratio: 1/1;
-      display: grid;
-      place-items: center;
-      > .remaining {
-        grid-area: 1/1;
-        color: hsl(0 0% 100%);
-        display: grid;
-        text-align: center;
-        font-size: 4cqi;
-        >.number {color: var(--number-color);}
-        >.text {
-          color: var(--text-color);
-          text-transform: uppercase;
-          font-size: 0.5em;}}
-      > .dot-container {
-        grid-area: 1/1;
-        height: 100%;
-        width: 4%;
-        rotate: calc(360deg / var(--dots) * var(--dot-idx));
-        > .dot {
-          width: 100%;
-          aspect-ratio: 1/1;
-          background-color: var(--dot-color);
-          border-radius: 50%;
-          transition: background-color .25s;
-          &[data-active=true]{
-            background-color: var(--dot-color-remaining);
-            &[data-lastactive=true]{
-              background-color: var(--dot-color-active);}}}}}}
-  
-  * { box-sizing: border-box }
-  html, body { height: 100% }
-  body {
-    margin: 0;
-    padding: 2rem;
-    background-color: hsl(0 0% 0%);
-    display: grid;
-    gap: 1rem;
-    align-content: center;}
-  h1 {
-    font-family: system-ui, sans-serif;
-    font-size:3rem;
-    color: hsl(0, 0%, 100%);
-    text-align: center;
-    >span:last-of-type{color: hsl(182, 100%, 50%)}}
+* {
+  box-sizing:border-box;
+}
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Open+Sans);
+
+body{
+  background: #3498db url(http://ambix.io/images/ambix-maint-bg.png);
+  color: #3a3a3a;
+  padding: 0;
+  margin: 0;
+}
+.wrapper{
+  width: 80%;
+   transform: translate3d(-50%,-50%, 0);
+  left: 50%;
+    top: 50%;
+  position: absolute;
+}
+h1{
+  font-family: 'Montserrat', sans-serif;
+  color: aqua;
+  font-size: 1.8rem;
+}
+p{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4rem;
+}
+.bubble 
+{
+  text-align: center;
+  position: absolute;
+  padding: 20px;
+  top: 50%;
+  left: 40%;
+  transform: translate3d(-49%,-49%,0);
+  width: 50%;
+  background: #FFFFFF;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  transform-origin:center left; 
+  -webkit-box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.bubble:after 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 15px 0 15px 15px;
+border-color: transparent #FFFFFF;
+display: block;
+width: 0;
+z-index: 1;
+margin-top: -15px;
+right: -15px;
+top: 30%;
+}
+.ambix-logo{
+  width: 180px;
+  position:absolute;
+  bottom: 20px;
+  left:20px;
+}
+.client-bar{
+  width: 100%;
+  background: rgba(255, 0, 0, 0.6);
+  padding: 15px;
+  text-align: center;
+}
+.client-logo{
+  height: 60px;
+}
+#ninja{
+  position: absolute;
+  top: 60%;
+  left: 80%;
+  transform: translate3d(-50%,-50%,0);
+  max-width: 50vw;
+  max-height: 80vh;
+  margin: 0 auto;
+  z-index: 1;
+}
+#hand{
+    transform-origin:center left; 
+    animation:hand_bounce 0.6s ease-in-out 0s infinite alternate}
+#laptop{
+    transform-origin:center left; 
+    animation:laptop_bounce 0.6s ease-in-out 0s infinite alternate}
+
+#left-eye, #right-eye{
+    transform-origin:center center; 
+    animation:eyes_blink 2s ease-out 0s infinite alternate}
+
+#shadow{
+    transform-origin:center center; 
+    animation:shadow 0.6s ease-in-out 0s infinite alternate}
+
+#body{
+    animation:hover 0.6s ease-in-out 0s infinite alternate}
+
+@keyframes hover { 
+    0% { transform: translate3d(0,20px,0) }
+    100% { transform: translate3d(0,30px,0) }
+}
+
+@keyframes eyes_blink { 
+    0% { transform: scale(1,1) }
+    90% { transform: scale(1,1) }
+    95% { transform: scale(0.8,0) }
+    100% { transform: scale(1,1) }
+}
+@keyframes hand_bounce { 
+    0% { transform: translate3d(0px,-5px,20px)rotate(0deg) }
+    100% { transform: translate3d(0,5px,20px)rotate(10deg) }
+}
+@keyframes laptop_bounce { 
+    0% { transform: translate3d(0px,0px,20px)rotate(0deg) }
+    100% { transform: translate3d(0,2px,20px)rotate(2deg) }
+}
+@keyframes shadow { 
+    0% {
+        transform: translate3d(0,0,0) scale(1,1);  
+        opacity: 0.2;
+      }
+    100% {
+        transform: translate3d(0,0,0) scale(1.2,1.1);
+        opacity: 0.4;
+    }
+}
+
+span {
+  font: 700 4em/1 "Oswald", sans-serif;
+  letter-spacing: 0;
+  padding: 0.25em 0 0.325em;
+  display: block;
+  margin: 0 auto;
+  text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+
+  /* Clip Background Image */
+  background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Animate Background Image */
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: aitf 80s linear infinite;
+
+  /* Activate hardware acceleration for smoother animations */
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+}
+
+/* Animate Background Image */
+@-webkit-keyframes aitf {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
