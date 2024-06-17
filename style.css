@@ -1,8 +1,8 @@
 .countdown{
-    --number-color: hsl(0 0% 100%);
-    --text-color: hsl(0 0% 25%);
+    --number-color: rgb(23, 23, 251);
+    --text-color: hsl(0, 21%, 90%);
     --dot-color: hsl(0 0% 10%);
-    --dot-color-remaining: hsl(182, 100%, 66%);
+    --dot-color-remaining: hsl(132, 100%, 50%);
     --dot-color-active: hsl(0 100% 50%);
     font-family: system-ui, sans-serif;
     display: grid;
@@ -21,15 +21,11 @@
         display: grid;
         text-align: center;
         font-size: 4cqi;
-        >.number {
-          color: var(--number-color);
-        }
+        >.number {color: var(--number-color);}
         >.text {
           color: var(--text-color);
           text-transform: uppercase;
-          font-size: 0.5em;
-        }
-      }
+          font-size: 0.5em;}}
       > .dot-container {
         grid-area: 1/1;
         height: 100%;
@@ -44,13 +40,7 @@
           &[data-active=true]{
             background-color: var(--dot-color-remaining);
             &[data-lastactive=true]{
-              background-color: var(--dot-color-active);
-            }
-          }
-        }
-      }
-    }
-  }
+              background-color: var(--dot-color-active);}}}}}}
   
   * { box-sizing: border-box }
   html, body { height: 100% }
@@ -60,13 +50,10 @@
     background-color: hsl(0 0% 0%);
     display: grid;
     gap: 1rem;
-    align-content: center;
-  }
+    align-content: center;}
   h1 {
     font-family: system-ui, sans-serif;
-    color: hsl(0 0% 100%);
+    font-size:3rem;
+    color: hsl(0, 0%, 100%);
     text-align: center;
-    >span:last-of-type{
-      color: hsl(182 100% 66%)
-    }
-  }
+    >span:last-of-type{color: hsl(182, 100%, 50%)}}
