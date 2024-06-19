@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Sign-Up.css">
+    <title>Sign In</title>
+</head>
+<body>
+    <div class="panel_blur"></div>
+    <div class="panel">
+        <div class="panel__form-wrapper">
+            <ul class="panel__headers">
+                <li class="panel__header active">
+                    <a href="#" class="panel__link" role="button">Sign In</a>
+                </li>
+            </ul>
+            <div class="panel__forms">
+                <form class="form panel__login-form" id="login-form" method="post" action="/">
+                    <div class="form__row">
+                        <input type="text" id="login-user" class="form__input" name="login-user" data-error="Invalid username." required>
+                        <span class="form__bar"></span>
+                        <label for="login-user" class="form__label">User</label>
+                        <span class="form__error"></span>
+                    </div>
+                    <div class="form__row">
+                        <input type="password" id="password" class="form__input" name="login-pass" data-validation="length" data-validation-length="8-25" data-error="Password must contain 8-25 characters." required>
+                        <span class="form__bar"></span>
+                        <label for="password" class="form__label">Password</label>
+                        <span class="form__error"></span>
+                    </div>
+                    <div class="form__row">
+                        <input type="submit" class="form__submit" value="Get Started!">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="Sign-Up.js"></script>
+</body>
+</html>
