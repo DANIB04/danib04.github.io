@@ -1,6 +1,5 @@
 $(function() {
     $("form").attr('novalidate', 'novalidate');
-    
     $('.panel__link, .form__retrieve-pass').on('click', function(e) {
         e.preventDefault();
         if ($(this).attr('href') === '#password-form') {
@@ -18,26 +17,18 @@ $(function() {
         $('.panel, .panel_blur').fadeOut(300);
     });
 
-    const authorizedUsers = {
-        'Dani': '1234',
-        'usuario2': 'contraseña2',
-        // Añadir más usuarios autorizados aquí
-    };
+    const authorizedUsers = {'Dani': '1234',};
 
-    // Redirigir al hacer submit en el formulario si las credenciales son correctas
     $('#login-form').on('submit', function(e) {
         e.preventDefault();
-        
-        const username = $('#login-user').val();
+            const username = $('#login-user').val();
         const password = $('#password').val();
-        
-        if (authorizedUsers[username] && authorizedUsers[username] === password) {
-            window.location.href = "https://www.youtube.com"; // URL de redirección a YouTube
+            if (authorizedUsers[username] && authorizedUsers[username] === password) {
+            window.location.href = "/Animes/index.html";
         } else {
             alert('Invalid credentials');
         }
     });
-    
     $.validate({
         modules : 'security',
         errorMessageClass: 'form__error',
