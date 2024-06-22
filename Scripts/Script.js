@@ -1,6 +1,14 @@
-$('#header').prepend('<div id="menu-icon"><span class="first"></span><span class="second"></span><span class="third"></span></div>');
-  
-$("#menu-icon").on("click", function(){
-  $("nav").slideToggle();
-  $(this).toggleClass("active");
-});
+function toggleTheme() {
+    const body = document.body;
+    body.dataset.theme = body.dataset.theme === 'dark' ? 'light' : 'dark';
+}
+
+function showContent(section) {
+    const sections = ['home', 'projects', 'about', 'contact', 'services', 'blog'];
+    sections.forEach(s => {
+        document.getElementById(s).classList.remove('active');
+        document.getElementById(s + 'Content').style.display = 'none';
+    });
+    document.getElementById(section).classList.add('active');
+    document.getElementById(section + 'Content').style.display = 'block';
+}
