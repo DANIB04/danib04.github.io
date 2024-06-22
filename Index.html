@@ -5,73 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio</title>
 <link rel="stylesheet" href="Css/Style.css">
-</head><body data-theme="dark">
-  <nav class="main-menu">
-      <ul>
-          <li>
-              <a id="home" class="active" onclick="showContent('home')">
-                  <i class="fa fa-home fa-2x nav-icon"></i>
-                  <span class="nav-text">Inicio</span>
-              </a>
-          </li>
-          <li>
-              <a id="projects" onclick="showContent('projects')">
-                  <i class="fa fa-briefcase fa-2x nav-icon"></i>
-                  <span class="nav-text">Proyectos</span>
-              </a>
-          </li>
-          <li>
-              <a id="about" onclick="showContent('about')">
-                  <i class="fa fa-user fa-2x nav-icon"></i>
-                  <span class="nav-text">Acerca de</span>
-              </a>
-          </li>
-          <li>
-              <a id="contact" onclick="showContent('contact')">
-                  <i class="fa fa-envelope fa-2x nav-icon"></i>
-                  <span class="nav-text">Contacto</span>
-              </a>
-          </li>
-          <li>
-              <a id="services" onclick="showContent('services')">
-                  <i class="fa fa-cogs fa-2x nav-icon"></i>
-                  <span class="nav-text">Servicios</span>
-              </a>
-          </li>
-          <li>
-              <a id="blog" onclick="showContent('blog')">
-                  <i class="fa fa-pencil fa-2x nav-icon"></i>
-                  <span class="nav-text">Blog</span>
-              </a>
-          </li>
-      </ul>
-  </nav>
-  <div class="content">
-      <div id="homeContent">
-          <h1>Bienvenido a mi Portafolio</h1>
-          <p>Contenido de la página de inicio.</p>
-      </div>
-      <div id="projectsContent" style="display:none;">
-          <h1>Proyectos</h1>
-          <p>Contenido de la página de proyectos.</p>
-      </div>
-      <div id="aboutContent" style="display:none;">
-          <h1>Acerca de</h1>
-          <p>Contenido de la página acerca de.</p>
-      </div>
-      <div id="contactContent" style="display:none;">
-          <h1>Contacto</h1>
-          <p>Contenido de la página de contacto.</p>
-      </div>
-      <div id="servicesContent" style="display:none;">
-          <h1>Servicios</h1>
-          <p>Contenido de la página de servicios.</p>
-      </div>
-      <div id="blogContent" style="display:none;">
-          <h1>Blog</h1>
-          <p>Contenido de la página del blog.</p>
-      </div>
-  </div>
-  <button class="theme-toggle" onclick="toggleTheme()">Cambiar Tema</button>    <script src="Scripts/Script.js"></script>
+</head>
+<body data-theme="dark">
+    <nav class="main-menu">
+        <ul>
+            <li>
+                <a id="home" class="active" onclick="showContent('home')">
+                    <i class="fa fa-home fa-2x nav-icon"></i>
+                    <span class="nav-text">Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a id="projects" onclick="showContent('projects')">
+                    <i class="fa fa-briefcase fa-2x nav-icon"></i>
+                    <span class="nav-text">Proyectos</span>
+                </a>
+            </li>
+            <li>
+                <a id="about" onclick="showContent('about')">
+                    <i class="fa fa-user fa-2x nav-icon"></i>
+                    <span class="nav-text">Acerca de</span>
+                </a>
+            </li>
+            <li>
+                <a id="contact" onclick="showContent('contact')">
+                    <i class="fa fa-envelope fa-2x nav-icon"></i>
+                    <span class="nav-text">Contacto</span>
+                </a>
+            </li>
+            <li>
+                <a id="services" onclick="showContent('services')">
+                    <i class="fa fa-cogs fa-2x nav-icon"></i>
+                    <span class="nav-text">Servicios</span>
+                </a>
+            </li>
+            <li>
+                <a id="blog" onclick="showContent('blog')">
+                    <i class="fa fa-pencil fa-2x nav-icon"></i>
+                    <span class="nav-text">Blog</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="content">
+        <div id="homeContent">
+            <h1>Bienvenido a mi Portafolio</h1>
+            <p>Contenido de la página de inicio.</p>
+        </div>
+        <div id="projectsContent" style="display: none;">
+            <h1>Proyectos</h1>
+            <p>Contenido de la página de proyectos.</p>
+        </div>
+        <div id="aboutContent" style="display:none;">
+            <h1>Acerca de</h1>
+            <p>Contenido de la página acerca de.</p>
+        </div>
+        <div id="contactContent" style="display:none;">
+            <h1>Contacto</h1>
+            <p>Contenido de la página de contacto.</p>
+        </div>
+        <div id="servicesContent" style="display:none;">
+            <h1>Servicios</h1>
+            <p>Contenido de la página de servicios.</p>
+        </div>
+        <div id="blogContent" style="display:none;">
+            <h1>Blog</h1>
+            <p>Contenido de la página del blog.</p>
+        </div>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()">Cambiar Tema</button>
+<script src="Scripts/Script.js"></script>
 </body>
 </html>
