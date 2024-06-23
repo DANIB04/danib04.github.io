@@ -17,9 +17,9 @@
 
 .main-menu:hover,
 nav.main-menu.expanded {
-    width: 100%;
+    width: max-content;
     overflow: visible;
-    text-align: center;
+    text-align: left;
 }
 
 .main-menu {
@@ -194,14 +194,14 @@ body {
     }
 
     .main-menu li {
-        width: 60px;
+        width: auto;
         height: 60px;
         display: inline-block;
     }
 
     .main-menu li>a {
         display: block;
-        text-align: center;
+        text-align: left;
     }
 
     .content {
