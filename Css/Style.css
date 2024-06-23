@@ -35,9 +35,9 @@
     display: table;
     border-collapse: collapse;
     border-spacing: 0;
-    color: #999;
+    color: #397e3c;
     font-family: arial;
-    font-size: 14px;
+    font-size: 24px;
     text-decoration: none;
     transform: translateZ(0) scale(1, 1);
     transition: all .1s linear;}
@@ -48,7 +48,7 @@
     height: 36px;
     text-align: center;
     vertical-align: middle;
-    font-size: 18px;}
+    font-size: 25px;}
 .main-menu .nav-text {
     position: relative;
     display: table-cell;
@@ -70,8 +70,8 @@ nav ul, nav li {
     margin: 0;
     padding: 0;}
 .main-menu li:hover>a, nav.main-menu li.active>a, .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus, .no-touch .dashboard-page nav.dashboard-menu ul li:hover a, .dashboard-page nav.dashboard-menu ul li.active a {
-    color: #f40000;
-    background-color: #ff6347;}
+    color: #0008f4;
+    background-color: #95878589;}
 nav ul li .active{
     color: rebeccapurple;
 }
