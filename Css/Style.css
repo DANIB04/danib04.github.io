@@ -1,7 +1,9 @@
 @import url(https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 
-.fa-2x {font-size: 2rem;}
+.fa-2x {
+    font-size: 2rem;
+}
 
 .fa {
     position: relative;
@@ -10,12 +12,15 @@
     height: 36px;
     text-align: center;
     vertical-align: middle;
-    font-size: 20px;}
+    font-size: 20px;
+}
 
 .main-menu:hover,
 nav.main-menu.expanded {
-    width: 250px;
-    overflow: visible;}
+    width: 100%;
+    overflow: visible;
+    text-align: center;
+}
 
 .main-menu {
     background: var(--sidebar-background);
@@ -29,15 +34,18 @@ nav.main-menu.expanded {
     overflow: hidden;
     transition: width .05s linear;
     transform: translateZ(0) scale(1, 1);
-    z-index: 1000;}
+    z-index: 1000;
+}
 
 .main-menu>ul {
-    margin: 7px 0;}
+    margin: 7px 0;
+}
 
 .main-menu li {
     position: relative;
     display: block;
-    width: 250px;}
+    width: 250px;
+}
 
 .main-menu li>a {
     position: relative;
@@ -49,7 +57,8 @@ nav.main-menu.expanded {
     font-size: 24px;
     text-decoration: none;
     transform: translateZ(0) scale(1, 1);
-    transition: all .1s linear;}
+    transition: all .1s linear;
+}
 
 .main-menu .nav-icon {
     position: relative;
@@ -58,39 +67,47 @@ nav.main-menu.expanded {
     height: 36px;
     text-align: center;
     vertical-align: middle;
-    font-size: 25px;}
+    font-size: 25px;
+}
 
 .main-menu .nav-text {
     position: relative;
     display: table-cell;
     vertical-align: middle;
     width: 190px;
-    font-family: 'Titillium Web', sans-serif;}
+    font-family: 'Titillium Web', sans-serif;
+}
 
 .main-menu>ul.logout {
     position: absolute;
     left: 0;
-    bottom: 0;}
+    bottom: 0;
+}
 
 .no-touch .scrollable.hover {
-    overflow-y: hidden;}
+    overflow-y: visible;
+}
 
 .no-touch .scrollable.hover:hover {
     overflow-y: auto;
-    overflow: visible;}
+    overflow: visible;
+}
 
 a:hover,
 a:focus {
-    text-decoration: none;}
+    text-decoration: none;
+}
 
 nav {
-    user-select: none;}
+    user-select: none;
+}
 
 nav ul,
 nav li {
     outline: 0;
     margin: 0;
-    padding: 0;}
+    padding: 0;
+}
 
 .main-menu li:hover>a,
 nav.main-menu li.active>a,
@@ -102,34 +119,35 @@ nav.main-menu li.active>a,
 .no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
 .dashboard-page nav.dashboard-menu ul li.active a {
     color: #0008f4;
-    background-color: #95878589;}
+    background-color: #95878589;
+}
 
 nav ul li .active {
-    color: rebeccapurple;}
+    color: rebeccapurple;
+    background-color: #a14d4d;
+}
 
 .area {
     float: left;
     background: #e2e2e2;
     width: 100%;
-    height: 100%;}
+    height: 100%;
+}
 
-@font-face {
-    font-family: 'Titillium Web';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');}
 
 :root {
     --primary-color: #fff;
     --background-color: #333;
     --sidebar-background: #212121;
-    --button-background: #555;}
+    --button-background: #d40000;
+}
 
 [data-theme="light"] {
     --primary-color: #333;
     --background-color: #fff;
     --sidebar-background: #ddd;
-    --button-background: #ccc;}
+    --button-background: #ccc;
+}
 
 body {
     color: var(--primary-color);
@@ -137,7 +155,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     display: flex;
-    overflow-x: hidden;}
+    overflow-x: hidden;
+}
 
 .theme-toggle {
     position: absolute;
@@ -148,36 +167,45 @@ body {
     color: var(--primary-color);
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;}
+    transition: background-color 0.3s;
+}
 
 .content {
     flex-grow: 1;
     padding: 20px;
-    margin-left: 60px;}
+    margin-left: 60px;
+}
 
 @media (max-width: 768px) {
     .main-menu.expanded {
-        height: auto;}
+        height: 12px;
+    }
 
     .main-menu .nav-text {
-        display: none;}
+        display: none;
+    }
 
     .main-menu {
         width: 100%;
         height: 60px;
         top: auto;
         bottom: 0;
-        flex-direction: row;}
+        flex-direction: row;
+    }
 
     .main-menu li {
         width: 60px;
         height: 60px;
-        display: inline-block;}
+        display: inline-block;
+    }
 
     .main-menu li>a {
         display: block;
-        text-align: center;}
+        text-align: center;
+    }
 
     .content {
         margin-left: 0;
-        margin-bottom: 60px;}}
+        margin-bottom: 60px;
+    }
+}
