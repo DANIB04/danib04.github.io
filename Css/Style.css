@@ -85,9 +85,9 @@ body {
 @media (max-width: 768px) {
     .menu-btn {
         display: block;
-    position: fixed;
-top: 20px;
-right: 20px;}
+        position: fixed;
+        top: 20px;
+        right: 20px;}
 
     .menu {
         display: none;
