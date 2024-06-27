@@ -4,79 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
+    <title>Daniel Biju</title>
     <link rel="stylesheet" href="Css/Style.css">
 </head>
 
 <body data-theme="dark">
-    <nav class="main-menu">
-        <ul>
-            <li>
-                <a id="home" class="active" onclick="showContent('home')">
-                    <i class="fa fa-home fa-2x nav-icon"></i>
-                    <span class="nav-text">Inicio</span>
-                </a>
-            </li>
-            <li>
-                <a id="projects" onclick="showContent('projects')">
-                    <i class="fa fa-briefcase fa-2x nav-icon"></i>
-                    <span class="nav-text">Proyectos</span>
-                </a>
-            </li>
-            <li>
-                <a id="about" onclick="showContent('about')">
-                    <i class="fa fa-user fa-2x nav-icon"></i>
-                    <span class="nav-text">Acerca de</span>
-                </a>
-            </li>
-            <li>
-                <a id="contact" onclick="showContent('contact')">
-                    <i class="fa fa-envelope fa-2x nav-icon"></i>
-                    <span class="nav-text">Contacto</span>
-                </a>
-            </li>
-            <li>
-                <a id="services" onclick="showContent('services')">
-                    <i class="fa fa-cogs fa-2x nav-icon"></i>
-                    <span class="nav-text">Servicios</span>
-                </a>
-            </li>
-            <li>
-                <a id="blog" onclick="showContent('blog')">
-                    <i class="fa fa-pencil fa-2x nav-icon"></i>
-                    <span class="nav-text">Blog</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <div class="content">
-        <div id="homeContent">
-            <h1>Bienvenido a mi Portafolio</h1>
-            <p>Contenido de la página de inicio.</p>
+    <header  class="l-header">
+        <div class="wrap">
+            <h1 class="logo__title">
+                <a href="#" class="logo__link">Dani B</a>
+            </h1>
+            <button class="btn menu-btn">Menu</button>
+            <nav class="menu">
+                <ul class="menu__list">
+                    <li class="menu__item">
+                        <a id="home" class="menu__link active" onclick="showContent('home')">Inicio</a>
+                    </li>
+                    <li class="menu__item">
+                        <a id="projects" class="menu__link" onclick="showContent('projects')">Proyectos</a>
+                    </li>
+                    <li class="menu__item">
+                        <a id="about" class="menu__link" onclick="showContent('about')">Acerca de</a>
+                    </li>
+                    <li class="menu__item">
+                        <a id="contact" class="menu__link" onclick="showContent('contact')">Contacto</a>
+                    </li>
+                    <li class="menu__item">
+                        <a id="services" class="menu__link" onclick="showContent('services')">Servicios</a>
+                    </li>
+                    <li class="menu__item">
+                        <a id="blog" class="menu__link" onclick="showContent('blog')">Blog</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <div id="projectsContent" style="display: none;">
-            <h1>Proyectos</h1>
-            <p>Contenido de la página de proyectos.</p>
-        </div>
-        <div id="aboutContent" style="display:none;">
-            <h1>Acerca de</h1>
-            <p>Contenido de la página acerca de.</p>
-        </div>
-        <div id="contactContent" style="display:none;">
-            <h1>Contacto</h1>
-            <p>Contenido de la página de contacto.</p>
-        </div>
-        <div id="servicesContent" style="display:none;">
-            <h1>Servicios</h1>
-            <p>Contenido de la página de servicios.</p>
-        </div>
-        <div id="blogContent" style="display:none;">
-            <h1>casas</h1>
-            <p>Contenido de la página del blog.</p>
-        </div>
-    </div>
+    </header>
+
+    <main class="l-main">
+            <div class="content">
+                <div id="homeContent">
+                    <h1>Bienvenido a mi Portafolio</h1>
+                    <p>Contenido de la página de inicio.</p>
+                </div>
+                <div id="projectsContent" style="display: none;">
+                    <h1>Proyectos</h1>
+                    <p>Contenido de la página de proyectos.</p>
+                </div>
+                <div id="aboutContent" style="display: none;">
+                    <h1>Acerca de</h1>
+                    <p>Contenido de la página acerca de.</p>
+                </div>
+                <div id="contactContent" style="display: none;">
+                    <h1>Contacto</h1>
+                    <p>Contenido de la página de contacto.</p>
+                </div>
+                <div id="servicesContent" style="display: none;">
+                    <h1>Servicios</h1>
+                    <p>Contenido de la página de servicios.</p>
+                </div>
+                <div id="blogContent" style="display: none;">
+                    <h1>Blog</h1>
+                    <p>Contenido de la página del blog.</p>
+                </div>
+            </div>
+    </main>
+
     <button class="theme-toggle" onclick="toggleTheme()">Cambiar Tema</button>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="Scripts/Script.js"></script>
 </body>
 
