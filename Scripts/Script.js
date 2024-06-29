@@ -1,6 +1,7 @@
 function toggleTheme() {
     const body = document.body;
-    body.dataset.theme = body.dataset.theme === 'dark' ? 'light' : 'dark';}
+    body.dataset.theme = body.dataset.theme === 'dark' ? 'light' : 'dark';
+}
 
 function showContent(section) {
     const sections = ['home', 'projects', 'about', 'contact', 'services', 'blog'];
@@ -14,7 +15,8 @@ function showContent(section) {
     const menuBtn = document.querySelector('.menu-btn');
     const menu = document.querySelector('.menu');
     menuBtn.classList.remove('is-active');
-    menu.classList.remove('active');}
+    menu.classList.remove('active');
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     const menuBtn = document.querySelector('.menu-btn');
@@ -26,4 +28,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.body.dataset.theme = 'dark';
-    showContent('home');});
+    showContent('home');
+});

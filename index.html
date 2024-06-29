@@ -9,68 +9,81 @@
 </head>
 
 <body data-theme="dark">
-    <header  class="l-header">
+    <header class="l-header">
         <div class="wrap">
             <h1 class="logo__title">
                 <a href="#" class="logo__link">Dani B</a>
             </h1>
-            <button class="btn menu-btn">Menu</button>
             <nav class="menu">
                 <ul class="menu__list">
                     <li class="menu__item">
-                        <a id="home" class="menu__link active" onclick="showContent('home')">Inicio</a>
+                        <a id="home" class="menu__link active" onclick="showContent('home')"><span>Inicio</span></a>
                     </li>
                     <li class="menu__item">
-                        <a id="projects" class="menu__link" onclick="showContent('projects')">Proyectos</a>
+                        <a id="projects" class="menu__link" onclick="showContent('projects')"><span>Proyectos</span></a>
                     </li>
                     <li class="menu__item">
-                        <a id="about" class="menu__link" onclick="showContent('about')">Acerca de</a>
+                        <a id="about" class="menu__link" onclick="showContent('about')"><span>Acerca de</span></a>
                     </li>
                     <li class="menu__item">
-                        <a id="contact" class="menu__link" onclick="showContent('contact')">Contacto</a>
+                        <a id="contact" class="menu__link" onclick="showContent('contact')"><span>Contacto</span></a>
                     </li>
                     <li class="menu__item">
-                        <a id="services" class="menu__link" onclick="showContent('services')">Servicios</a>
+                        <a id="services" class="menu__link" onclick="showContent('services')"><span>Servicios</span></a>
                     </li>
                     <li class="menu__item">
-                        <a id="blog" class="menu__link" onclick="showContent('blog')">Blog</a>
+                        <a id="blog" class="menu__link" onclick="showContent('blog')"><span>blo</span></a>
                     </li>
                 </ul>
             </nav>
         </div>
+        <button class="menu-btn">Menu</button>
+
     </header>
 
     <main class="l-main">
-            <div class="content">
-                <div id="homeContent">
-                    <h1>Bienvenido a mi Portafolio</h1>
-                    <p>Contenido de la página de inicio.</p>
-                </div>
-                <div id="projectsContent" style="display: none;">
-                    <h1>Proyectos</h1>
-                    <p>Contenido de la página de proyectos.</p>
-                </div>
-                <div id="aboutContent" style="display: none;">
-                    <h1>Acerca de</h1>
-                    <p>Contenido de la página acerca de.</p>
-                </div>
-                <div id="contactContent" style="display: none;">
-                    <h1>Contacto</h1>
-                    <p>Contenido de la página de contacto.</p>
-                </div>
-                <div id="servicesContent" style="display: none;">
-                    <h1>Servicios</h1>
-                    <p>Contenido de la página de servicios.</p>
-                </div>
-                <div id="blogContent" style="display: none;">
-                    <h1>Blog</h1>
-                    <p>Contenido de la página del blog.</p>
-                </div>
+        <div class="content">
+            <div id="homeContent">
+                <h1>Bienvenido a mi Portafolio</h1>
+                <p>Contenido de la página de inicio.</p>
             </div>
+            <div id="projectsContent" style="display: none;">
+                <section id="proyectos" class="section">
+                    <h2>Proyectos</h2>
+                    <div class="project">
+                        <h3>Proyecto 1</h3>
+                        <p>Descripción del proyecto 1. Explica brevemente en qué consiste y cuáles fueron los desafíos y soluciones implementadas.</p>
+                    </div>
+                    <div class="project">
+                        <h3>Proyecto 2</h3>
+                        <p>Descripción del proyecto 2. Explica brevemente en qué consiste y cuáles fueron los desafíos y soluciones implementadas.</p>
+                    </div>
+                    <!-- Puedes añadir más proyectos siguiendo la misma estructura -->
+                </section>
+            </div>
+            <div id="aboutContent" style="display: none;">
+                <h1>Acerca de</h1>
+                <p>Contenido de la página acerca de.</p>
+            </div>
+            <div id="contactContent" style="display: none;">
+                <h1>Contacto</h1>
+                <p>Contenido de la página de contacto.</p>
+            </div>
+            <div id="servicesContent" style="display: none;">
+                <h1>Servicios</h1>
+                <p>Contenido de la página de servicios.</p>
+            </div>
+            <div id="blogContent" style="display: none;">
+                <h1>Blog</h1>
+                <p>Contenido de la página del blog.</p>
+            </div>
+        </div>
     </main>
-
+    
     <button class="theme-toggle" onclick="toggleTheme()">Cambiar Tema</button>
-
+    <footer>
+        <p>&copy; 2024 [Tu Nombre]. Todos los derechos reservados.</p>
+    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="Scripts/Script.js"></script>
 </body>
