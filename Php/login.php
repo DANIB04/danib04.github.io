@@ -1,8 +1,8 @@
 <?php
 // Datos de usuarios y contraseñas
 $users = [
-    'user1' => 'password1',
-    'user2' => 'password2'
+    'dani' => '1234',
+    'lidia' => '1234'
 ];
 
 // Obtener datos del formulario
@@ -13,11 +13,12 @@ $password = $_POST['password'];
 if (isset($users[$username]) && $users[$username] === $password) {
     // Redirigir según el usuario
     if ($username === 'user1') {
-        header('Location: index_user1.html');
+        header('Location: https://www.youtube.com/');
     } elseif ($username === 'user2') {
-        header('Location: index_user2.html');
+        header('Location: https://www.amazon.com/');
     }
     exit();
 } else {
     echo "Usuario o contraseña incorrectos.";
 }
+?>
