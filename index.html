@@ -13,8 +13,9 @@
         <div class="wrap">
             <h1 class="logo__title">
                 <a href="#" class="logo__link">Dani B</a>
-            </h1>
-            <nav class="menu">
+            </h1>           
+        </div>
+        <nav class="menu">
                 <ul class="menu__list">
                     <li class="menu__item">
                         <a id="home" class="menu__link active" onclick="showContent('home')"><span>Inicio</span></a>
@@ -32,11 +33,10 @@
                         <a id="services" class="menu__link" onclick="showContent('services')"><span>Servicios</span></a>
                     </li>
                     <li class="menu__item">
-                        <a id="blog" class="menu__link" onclick="showContent('blog')"><span>blo</span></a>
+                        <a id="blog" class="menu__link" onclick="showContent('blog')"><span>Blog</span></a>
                     </li>
                 </ul>
             </nav>
-        </div>
         <button class="menu-btn">Menu</button>
 
     </header>
@@ -58,7 +58,6 @@
                         <h3>Proyecto 2</h3>
                         <p>Descripción del proyecto 2. Explica brevemente en qué consiste y cuáles fueron los desafíos y soluciones implementadas.</p>
                     </div>
-                    <!-- Puedes añadir más proyectos siguiendo la misma estructura -->
                 </section>
             </div>
             <div id="aboutContent" style="display: none;">
@@ -80,8 +79,8 @@
         </div>
     </main>
     
-    <button class="theme-toggle" onclick="toggleTheme()">Cambiar Tema</button>
     <footer>
+        <button class="theme-toggle" onclick="toggleTheme()">Cambiar Tema</button>
         <p>&copy; 2024 Dani. Todos los derechos reservados.</p>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
