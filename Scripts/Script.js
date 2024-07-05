@@ -4,19 +4,46 @@ function toggleTheme() {
     body.dataset.theme = newTheme;
 }
 
-function showContent(section) {
-    const sections = ['home', 'projects', 'about', 'contact', 'services', 'blog'];
+function loadPage(section) {
+    const sections = ['home', 'projects', 'contact', 'services', 'blog', 'priv'];
     sections.forEach(s => {
         document.getElementById(s).classList.remove('active');
-        document.getElementById(s + 'Content').style.display = 'none';
     });
     document.getElementById(section).classList.add('active');
-    document.getElementById(section + 'Content').style.display = 'block';
+
+    if (section === 'priv') {
+        requestPassword();
+    } else {
+        $('#content').load(`pages/${section}.html`);
+    }
 
     const menuBtn = document.querySelector('.menu-btn');
     const menu = document.querySelector('.menu');
     menuBtn.classList.remove('is-active');
     menu.classList.remove('active');
+}
+
+function requestPassword() {
+    const password = prompt("Ingrese la contraseña:");
+    if (password) {
+        decryptContent(password);
+    }
+}
+
+function decryptContent(password) {
+    try {
+        const bytes = CryptoJS.AES.decrypt(encryptedContent, password);
+        const decryptedContent = bytes.toString(CryptoJS.enc.Utf8);
+
+        if (decryptedContent) {
+            $('#content').html(decryptedContent);
+            document.getElementById('priv').classList.add('active');
+        } else {
+            alert('Contraseña incorrecta');
+        }
+    } catch (e) {
+        alert('Error en la desencriptación. Asegúrese de que la contraseña sea correcta.');
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -29,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.body.dataset.theme = 'dark';
-    showContent('home');
+    loadPage('home');
     updateCountdown();
 });
 

@@ -16,22 +16,22 @@
         <nav class="menu">
             <ul class="menu__list">
                 <li class="menu__item">
-                    <a id="home" class="menu__link active" onclick="showContent('home')">Inicio</a>
+                    <a id="home" class="menu__link active" onclick="loadPage('home')">Inicio</a>
                 </li>
                 <li class="menu__item">
-                    <a id="projects" class="menu__link" onclick="showContent('projects')">Proyectos</a>
+                    <a id="projects" class="menu__link" onclick="loadPage('projects')">Proyectos</a>
                 </li>
                 <li class="menu__item">
-                    <a id="about" class="menu__link" onclick="showContent('about')">Cumples</a>
+                    <a id="contact" class="menu__link" onclick="loadPage('contact')">Contacto</a>
                 </li>
                 <li class="menu__item">
-                    <a id="contact" class="menu__link" onclick="showContent('contact')">Contacto</a>
+                    <a id="services" class="menu__link" onclick="loadPage('services')">Servicios</a>
                 </li>
                 <li class="menu__item">
-                    <a id="services" class="menu__link" onclick="showContent('services')">Servicios</a>
+                    <a id="blog" class="menu__link" onclick="loadPage('blog')">Blog</a>
                 </li>
                 <li class="menu__item">
-                    <a id="blog" class="menu__link" onclick="showContent('blog')">Blog</a>
+                    <a id="priv" class="menu__link" onclick="requestPassword()">Privado</a>
                 </li>
             </ul>
         </nav>
@@ -39,81 +39,8 @@
     </header>
 
     <main class="l-main">
-        <div class="content">
-            <div id="homeContent">
-                <h1>Bienvenido</h1>
-                <p>Contenido de la página de inicio.</p>
-            </div>
-            <div id="projectsContent" style="display: none;">
-                <section id="proyectos" class="section">
-                    <h2>Proyectos</h2>
-                    <div class="project">
-                        <h3>Proyecto 1</h3>
-                        <p>Descripción del proyecto 1. Explica brevemente en qué consiste y cuáles fueron los desafíos y soluciones implementadas.</p>
-                    </div>
-                    <div class="project">
-                        <h3>Proyecto 2</h3>
-                        <p>Descripción del proyecto 2. Explica brevemente en qué consiste y cuáles fueron los desafíos y soluciones implementadas.</p>
-                    </div>
-                </section>
-            </div>
-            <div id="aboutContent" style="display: none;">
-                <h1>Cumples</h1>
-                <br>
-                <p>
-                    LIDIA
-                </p>
-                <ul id="countdown1" class="countdown">
-                    <li class="time" id="days1">
-                        <div class="number">00</div>
-                        <div class="label">Días</div>
-                    </li>
-                    <li class="time" id="hours1">
-                        <div class="number">00</div>
-                        <div class="label">Horas</div>
-                    </li>
-                    <li class="time" id="minutes1">
-                        <div class="number">00</div>
-                        <div class="label">Minutos</div>
-                    </li>
-                    <li class="time" id="seconds1">
-                        <div class="number">00</div>
-                        <div class="label">Segundos</div>
-                    </li>
-                </ul>
-                <br>
-                <p>DANI</p>
-                <ul id="countdown2" class="countdown">
-                    <li class="time" id="days2">
-                        <div class="number">00</div>
-                        <div class="label">Días</div>
-                    </li>
-                    <li class="time" id="hours2">
-                        <div class="number">00</div>
-                        <div class="label">Horas</div>
-                    </li>
-                    <li class="time" id="minutes2">
-                        <div class="number">00</div>
-                        <div class="label">Minutos</div>
-                    </li>
-                    <li class="time" id="seconds2">
-                        <div class="number">00</div>
-                        <div class="label">Segundos</div>
-                    </li>
-                </ul>
-            </div>
-            <div id="contactContent" style="display: none;">
-                <h1>Contacto</h1>
-                <p>Contenido de la página de contacto.</p>
-            </div>
-            <div id="servicesContent" style="display: none;">
-                <h1>Servicios</h1>
-                <p>Contenido de la página de servicios.</p>
-            </div>
-            <div id="blogContent" style="display: none;">
-                <h1>Blog</h1>
-                <p>Contenido de la página del blog.</p>
-            </div>
+        <div class="content" id="content">
+            <!-- Contenido cargado dinámicamente aquí -->
         </div>
     </main>
 
@@ -123,6 +50,7 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="Scripts/Script.js"></script>
 </body>
 </html>
