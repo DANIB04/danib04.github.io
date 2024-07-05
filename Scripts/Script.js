@@ -14,13 +14,32 @@ function loadPage(section) {
     if (section === 'priv') {
         requestPassword();
     } else {
-        $('#content').load(`pages/${section}.html`);
+        fetchPage(section);
     }
 
     const menuBtn = document.querySelector('.menu-btn');
     const menu = document.querySelector('.menu');
     menuBtn.classList.remove('is-active');
     menu.classList.remove('active');
+}
+
+function fetchPage(section) {
+    const url = `https://danib04.github.io/Pages/${section}.html`;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('content').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error fetching page:', error);
+            document.getElementById('content').innerHTML = '<p>Error fetching content. Please try again later.</p>';
+        });
 }
 
 function requestPassword() {
@@ -36,7 +55,7 @@ function decryptContent(password) {
         const decryptedContent = bytes.toString(CryptoJS.enc.Utf8);
 
         if (decryptedContent) {
-            $('#content').html(decryptedContent);
+            document.getElementById('content').innerHTML = decryptedContent;
             document.getElementById('priv').classList.add('active');
         } else {
             alert('Contraseña incorrecta');
