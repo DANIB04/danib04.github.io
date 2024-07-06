@@ -1,0 +1,95 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.left-panel, .right-panel {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #ffffff;
+}
+
+.left-panel {
+    border-right: 2px solid #eeeeee;
+}
+
+h2 {
+    text-align: center;
+    color: #333333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #dddddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f5f5f5;
+    color: #555555;
+}
+
+#countdown {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #ff4444;
+    animation: blink 2s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+ul#exam-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul#exam-list li {
+    background-color: #fafafa;
+    border: 1px solid #eeeeee;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+ul#exam-list li:hover {
+    background-color: #f0f0f0;
+}
+
+#exam-list span {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #777777;
+}
