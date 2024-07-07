@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('/Datos/data.json')
+    fetch('https://raw.githubusercontent.com/DANIB04/danib04.github.io/main/Datos/data.json')
         .then(response => response.json())
         .then(data => {
             displaySchedule(data.schedule);
