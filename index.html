@@ -3,9 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="/css/home.css">
     <title>Inicio</title>
 </head>
 <body>
-    Mantenimineto 🫡
+    <header>
+        <a href="/index.html" class="logo animate__animated animate__fadeInDown">Dani B</a>
+        <div class="menu-toggle"></div>
+        <nav>
+            <ul>
+                <!-- <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="/Pages/Proyectos.html">Proyectos</a></li>
+                <li><a href="/Pages/CV.html">CV</a></li>
+                <li><a href="contacto.html">Contacto</a></li> -->
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+
+    <section class="content animate__animated animate__zoomIn">
+        <ul id="countdown">
+            <li id="days">
+              <div class="number"></div>
+              <div class="label">Days</div>
+            </li>
+            <li id="hours">
+              <div class="number">00</div>
+              <div class="label">Hours</div>
+            </li>
+            <li id="minutes">
+              <div class="number">00</div>
+              <div class="label">Minutes</div>
+            </li>
+            <li id="seconds">
+              <div class="number">00</div>
+              <div class="label">Seconds</div>
+            </li>
+        </ul>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="/js/home.js"></script>
 </body>
 </html>
