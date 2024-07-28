@@ -3,91 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <title>Página Principal</title>
     <link rel="stylesheet" href="/css/home.css">
-    <title>Inicio</title>
-    <style>
-        h1 {
-            color: azure;
-        }
-    </style>
 </head>
-
 <body>
-    <h2>o34i'3i04<div id="device-info"></div></h2>  
-    <canvas id="oldSkool"></canvas>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.5/mobile-detect.min.js"></script>
+    <div id="dashboard" class="dashboard">
+        <dashboard-header title="Datacenter">
+            <dashboard-clock digital="true" binary="true"></dashboard-clock>
+        </dashboard-header>
+        <server-list>
+            <server v-for="(server, index) in servers" :key="index" :class="{ 'has-failed': !server.status }" :type="server.type" @click.native="updateServerStatus(index)">
+                <template v-slot:name>
+                    <span class="data">{{ server.name }}</span>
+                </template>
+                <template v-slot:status>
+                    <span class="data signal">{{ server.status ? 'ONLINE' : 'OFFLINE' }}</span>
+                </template>
+                <template v-slot:adr>
+                    <span class="data">{{ server.adr }}</span>
+                </template>
+            </server>
+        </server-list>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuex@3"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        // Canvas setup
-        var db = document.body;
-        var c = document.getElementById('oldSkool');
-        var $ = c.getContext('2d');
-        c.width = window.innerWidth;
-        c.height = window.innerHeight;
-        var resume;
-        function relay(){
-            window.requestAnimationFrame(relay);
-            resume();
-        }
-
-        // Relay script
-        var _s = db.querySelectorAll("script")[2].innerHTML.split("\n");
-        var x = 0; 
-        var y = 1; 
-        c.width = window.innerWidth;
-        c.height = _s.length * 20;
-        db.style.margin = 0;
-        db.style.background = "hsla(0,0%,0%,1)";
-        db.style.overflow = "hidden";
-        $.textBaseline = "top";
-        $.font = "1.1em monospace";
-        
-        resume = function(){
-            $.globalCompositeOperation = "source-over";
-            $.shadowBlur = 0; 
-            $.fillStyle = "hsla(0,0%,0%,0.4)";
-            $.fillRect(0, 0, window.innerWidth, _s.length * 20);
-            $.shadowColor = "hsla(120,100%,50%,0.5)";
-            $.shadowBlur = 9; 
-            $.fillStyle = "hsla(120,100%,20%,1)";
-            $.globalCompositeOperation = "lighter";
-            _s.forEach(function(t, i) {
-                if (i <= y) {
-                    if (i == y) { t = t.substr(0, x); }
-                    $.fillText(t, 100, 100 + i * 16);        
+        const store = new Vuex.Store({
+            state: {
+                servers: [
+                    { name: 'Lorem', status: true, adr: '192.168.0.24' },
+                    { name: 'Ipsum', status: true, adr: '192.168.0.25', type: 'database' },
+                    { name: 'Dolor', status: true, adr: '192.168.0.26', type: 'database' },
+                    { name: 'Adipiscing', status: true, adr: '192.168.0.37' },
+                    { name: 'Eiusmod', status: true, adr: '192.168.0.17' },
+                    { name: 'Cupidatat', status: true, adr: '192.168.0.23' },
+                    { name: 'Reprehenderit', status: true, adr: '192.168.0.47' },
+                    { name: 'Typhoon', status: true, adr: '192.168.0.127' }
+                ]
+            },
+            mutations: {
+                UPDATE_SERVER_STATUS(state, payload) {
+                    state.servers[payload].status ^= true;
                 }
-            });
-            $.fillStyle = "hsla(120,100%,50%,1)";
-            $.fillRect(100 + $.measureText(_s[y].substr(0, x)).width, 102 + y * 16, 10, 14);
-            x++;
-            if (x >= _s[y].length) { y++; x = 0; }
-            if (y * 16 > innerHeight - 200) { $.translate(0, -0.5); }
-            if (y >= _s.length - 1) { window.clearInterval(); }
-        }
-        
-        relay();
-    </script>
+            },
+            actions: {
+                serverStatus({ commit }, server) {
+                    commit('UPDATE_SERVER_STATUS', server);
+                }
+            }
+        });
 
-    <script>
-        // Device detection script using mobile-detect.js
-        document.addEventListener("DOMContentLoaded", function() {
-            var deviceInfo = document.getElementById('device-info');
-            var md = new MobileDetect(window.navigator.userAgent);
+        Vue.use(Vuex);
 
-            if (md.phone()) {
-                deviceInfo.textContent = "Estás usando un teléfono móvil: " + md.phone();
-            } else if (md.tablet()) {
-                deviceInfo.textContent = "Estás usando una tablet: " + md.tablet();
-            } else if (md.mobile()) {
-                deviceInfo.textContent = "Estás usando un dispositivo móvil desconocido.";
-            } else {
-                deviceInfo.textContent = "No se ha podido determinar tu dispositivo móvil.";
+        Vue.component('dashboard-clock', {
+            props: {
+                digital: {
+                    default: true,
+                    type: Boolean
+                },
+                binary: {
+                    default: false,
+                    type: Boolean
+                }
+            },
+            data() {
+                return {
+                    time: ''
+                };
+            },
+            template: `
+                <div class='dashboard-clock'>
+                    <div v-if="digital" class="dashboard-clock-digital">{{ time }}</div>
+                    <table v-if="binary" class="dashboard-clock-binary">
+                        <tr class='hours'>
+                            <td v-for='n in 6'></td>
+                        </tr>
+                        <tr class='minutes'>
+                            <td v-for='n in 6'></td>
+                        </tr>
+                        <tr class='seconds'>
+                            <td v-for='n in 6'></td>
+                        </tr>
+                    </table>
+                </div>
+            `,
+            mounted() {
+                this.render();
+                setInterval(this.render, 1000);
+            },
+            methods: {
+                render() {
+                    const d = new Date();
+                    const h = d.getHours();
+                    const m = d.getMinutes();
+                    const s = d.getSeconds();
+                    this.time = `${this.addZero(h)} : ${this.addZero(m)} : ${this.addZero(s)}`;
+                    this.light(this.convert(s), '.seconds');
+                    this.light(this.convert(m), '.minutes');
+                    this.light(this.convert(h), '.hours');
+                },
+                convert(num) {
+                    let bin = "";
+                    let conv = [];
+                    while (num > 0) {
+                        bin = num % 2 + bin;
+                        num = Math.floor(num / 2);
+                    }
+                    conv = bin.split('');
+                    while (conv.length < 6) {
+                        conv.unshift("0");
+                    }
+                    return conv;
+                },
+                light(array, type) {
+                    $(type + ' td').attr('class', 'num0');
+                    for (let i = 0; i < array.length; i++) {
+                        $(type + ' td:eq(' + i + ')').attr('class', 'num' + array[i]);
+                    }
+                },
+                addZero(i) {
+                    return (i < 10) ? "0" + i : i;
+                }
+            }
+        });
+
+        Vue.component('dashboard-header', {
+            props: ['title'],
+            template: `
+                <header class="dashboard-header">
+                    <h1 class="dashboard-title">{{ title }}</h1>
+                    <slot></slot>
+                </header>
+            `
+        });
+
+        Vue.component('server-list', {
+            template: '<div class="server-list"><slot></slot></div>'
+        });
+
+        Vue.component('server', {
+            props: ['type'],
+            template: `
+                <div class="server">
+                    <div class="server-icon fa" :class="'fa-' + (type === 'database' ? 'tasks' : 'globe')"></div>
+                    <ul class="server-details">
+                        <li>Hostname: <slot name="name"></slot></li>
+                        <li>Status: <slot name="status"></slot></li>
+                        <li>Address: <slot name="adr"></slot></li>
+                    </ul>
+                </div>
+            `
+        });
+
+        const dashboard = new Vue({
+            el: '#dashboard',
+            store,
+            computed: {
+                servers() {
+                    return this.$store.state.servers;
+                }
+            },
+            methods: {
+                updateServerStatus(server) {
+                    this.$store.dispatch('serverStatus', server);
+                },
+                randomizeServerStatus() {
+                    const randomIndex = Math.floor(Math.random() * this.servers.length);
+                    this.updateServerStatus(randomIndex);
+                    const randomTimeout = Math.floor(Math.random() * (5000 - 2000 + 1) + 2000);
+                    setTimeout(this.randomizeServerStatus, randomTimeout);
+                }
+            },
+            mounted() {
+                this.randomizeServerStatus();
             }
         });
     </script>
-
-    <script src="/js/home.js"></script>
 </body>
 </html>
