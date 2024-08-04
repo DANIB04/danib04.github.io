@@ -1,184 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Principal</title>
-    <link rel="stylesheet" href="/css/home.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card</title>
+  <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-    <div id="dashboard" class="dashboard">
-        <dashboard-header title="Datacenter">
-            <dashboard-clock digital="true" binary="true"></dashboard-clock>
-        </dashboard-header>
-        <server-list>
-            <server v-for="(server, index) in servers" :key="index" :class="{ 'has-failed': !server.status }" :type="server.type" @click.native="updateServerStatus(index)">
-                <template v-slot:name>
-                    <span class="data">{{ server.name }}</span>
-                </template>
-                <template v-slot:status>
-                    <span class="data signal">{{ server.status ? 'ONLINE' : 'OFFLINE' }}</span>
-                </template>
-                <template v-slot:adr>
-                    <span class="data">{{ server.adr }}</span>
-                </template>
-            </server>
-        </server-list>
+  <div class="card">
+    <div class="top-section">
+      <div class="border">anime number</div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vuex@3"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        const store = new Vuex.Store({
-            state: {
-                servers: [
-                    { name: '001', status: true, adr: '192.168.0.24' },
-                    { name: '002', status: true, adr: '192.168.0.25', type: 'database' },
-                    { name: '003', status: true, adr: '192.168.0.26', type: 'database' },
-                    { name: '004', status: true, adr: '192.168.0.37' },
-                    { name: '005', status: true, adr: '192.168.0.17' },
-                    { name: '006', status: true, adr: '192.168.0.23' },
-                    { name: '007', status: true, adr: '192.168.0.47', type: 'database'},
-                    { name: '008', status: true, adr: '192.168.0.127' }
-                ]
-            },
-            mutations: {
-                UPDATE_SERVER_STATUS(state, payload) {
-                    state.servers[payload].status ^= true;
-                }
-            },
-            actions: {
-                serverStatus({ commit }, server) {
-                    commit('UPDATE_SERVER_STATUS', server);
-                }
-            }
-        });
-
-        Vue.use(Vuex);
-
-        Vue.component('dashboard-clock', {
-            props: {
-                digital: {
-                    default: true,
-                    type: Boolean
-                },
-                binary: {
-                    default: false,
-                    type: Boolean
-                }
-            },
-            data() {
-                return {
-                    time: ''
-                };
-            },
-            template: `
-                <div class='dashboard-clock'>
-                    <div v-if="digital" class="dashboard-clock-digital">{{ time }}</div>
-                    <table v-if="binary" class="dashboard-clock-binary">
-                        <tr class='hours'>
-                            <td v-for='n in 6'></td>
-                        </tr>
-                        <tr class='minutes'>
-                            <td v-for='n in 6'></td>
-                        </tr>
-                        <tr class='seconds'>
-                            <td v-for='n in 6'></td>
-                        </tr>
-                    </table>
-                </div>
-            `,
-            mounted() {
-                this.render();
-                setInterval(this.render, 1000);
-            },
-            methods: {
-                render() {
-                    const d = new Date();
-                    const h = d.getHours();
-                    const m = d.getMinutes();
-                    const s = d.getSeconds();
-                    this.time = `${this.addZero(h)} : ${this.addZero(m)} : ${this.addZero(s)}`;
-                    this.light(this.convert(s), '.seconds');
-                    this.light(this.convert(m), '.minutes');
-                    this.light(this.convert(h), '.hours');
-                },
-                convert(num) {
-                    let bin = "";
-                    let conv = [];
-                    while (num > 0) {
-                        bin = num % 2 + bin;
-                        num = Math.floor(num / 2);
-                    }
-                    conv = bin.split('');
-                    while (conv.length < 6) {
-                        conv.unshift("0");
-                    }
-                    return conv;
-                },
-                light(array, type) {
-                    $(type + ' td').attr('class', 'num0');
-                    for (let i = 0; i < array.length; i++) {
-                        $(type + ' td:eq(' + i + ')').attr('class', 'num' + array[i]);
-                    }
-                },
-                addZero(i) {
-                    return (i < 10) ? "0" + i : i;
-                }
-            }
-        });
-
-        Vue.component('dashboard-header', {
-            props: ['title'],
-            template: `
-                <header class="dashboard-header">
-                    <h1 class="dashboard-title">{{ title }}</h1>
-                    <slot></slot>
-                </header>
-            `
-        });
-
-        Vue.component('server-list', {
-            template: '<div class="server-list"><slot></slot></div>'
-        });
-
-        Vue.component('server', {
-            props: ['type'],
-            template: `
-                <div class="server">
-                    <div class="server-icon fa" :class="'fa-' + (type === 'database' ? 'tasks' : 'globe')"></div>
-                    <ul class="server-details">
-                        <li>Hostname: <slot name="name"></slot></li>
-                        <li>Status: <slot name="status"></slot></li>
-                        <li>Address: <slot name="adr"></slot></li>
-                    </ul>
-                </div>
-            `
-        });
-
-        const dashboard = new Vue({
-            el: '#dashboard',
-            store,
-            computed: {
-                servers() {
-                    return this.$store.state.servers;
-                }
-            },
-            methods: {
-                updateServerStatus(server) {
-                    this.$store.dispatch('serverStatus', server);
-                },
-                randomizeServerStatus() {
-                    const randomIndex = Math.floor(Math.random() * this.servers.length);
-                    this.updateServerStatus(randomIndex);
-                    const randomTimeout = Math.floor(Math.random() * (5000 - 2000 + 1) + 2000);
-                    setTimeout(this.randomizeServerStatus, randomTimeout);
-                }
-            },
-            mounted() {
-                this.randomizeServerStatus();
-            }
-        });
-    </script>
+    <div class="bottom-section">
+      <span class="title">Anime name</span>
+      <div class="row row1">
+        <div class="item">
+          <span class="big-text"></span>
+          <span class="regular-text">Score</span>
+        </div>
+        <div class="item">
+          <span class="big-text"></span>
+          <span class="regular-text">seasons</span>
+        </div>
+        <div class="item">
+          <span class="big-text"></span>
+          <span class="regular-text">Episodeos</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
