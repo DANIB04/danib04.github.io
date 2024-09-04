@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cyberpunk - Login</title>
+    <link rel="stylesheet" href="/CSS/index.css">
+</head>
+
+<body>
+    <div class="container on">
+        <div class="screen">
+            <h3 class="title">
+                CONNECTING
+            </h3>
+            <div class="box--outer">
+                <div class="box">
+                    <div class="box--inner">
+                        <div class="content">
+                            <div class="holder">
+                                <b>Welcome to My Cyberpunk Portfolio</b>
+                                <p>
+                                <div class="row">
+                                    <div class="col col__left label">
+                                        ID
+                                    </div>
+                                    <div class="col col__center">
+                                        <input type="text" id="login" maxlength="32" placeholder="Enter your username">
+                                    </div>
+                                </div>
+                                <form id="loginForm">
+                                    <div class="row">
+                                        <div class="col col__left label">
+                                            Password
+                                        </div>
+                                        <div class="col col__center">
+                                            <input type="password" id="password" name="password" required="required" maxlength="32" autocomplete="new-password" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <button type="submit" id="submit">[login]</button>
+                                    </div>
+                                </form>
+                                <p id="error" style="color: red;"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/JS/login.js"></script>
+</body>
+
+</html>
