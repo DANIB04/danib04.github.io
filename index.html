@@ -1,19 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Cyberpunk Portfolio</title>
-    <link rel-"stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Daniel B</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
+    <header class="container">
+        <nav class="navbar">
+            <div class="brand">
+                <span class="firstName">Dani</span>
+                <span class="lastName">B</span>
+            </div>
 
-    <p>Hi there 😜</p>
-    dani
+            <!-- Checkbox for Hamburger Menu -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <i class="fa fa-bars"></i>
+            </label>
 
+            <ul class="nav-links">
+                <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                <li><a href="#gallery" onclick="showSection('gallery')">Gallery</a></li>
+                <li><a href="#services" onclick="showSection('services')">Services</a></li>
+                <li><a href="#about" onclick="showSection('about')">About Us</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Home -->
+    <section id="home" class="section visible">
+        <h1>Home</h1>
+        <p>Bienvenido a la página principal.</p>
+    </section>
+
+    <!-- Sección Gallery -->
+    <section id="gallery" class="section hidden">
+        <h1>Gallery</h1>
+        <p>Aquí verás una galería de imágenes de ejemplo.</p>
+    </section>
+
+    <!-- Sección Services -->
+    <section id="services" class="section hidden">
+        <h1>Services</h1>
+        <p>Conoce nuestros servicios.</p>
+    </section>
+
+    <!-- Sección About Us -->
+    <section id="about" class="section hidden">
+        <h1>About Us</h1>
+        <p>Aprende más sobre nosotros.</p>
+    </section>
+
+    <!-- Sección Contact Us -->
+    <section id="contact" class="section hidden">
+        <h1>Contact Us</h1>
+        <p>Ponte en contacto con nosotros.</p>
+    </section>
+
+    <script src="script.js"></script>
+    
 </body>
-
 </html>
