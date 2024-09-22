@@ -3,67 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="/Imagnes/LOGO.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/Imagenes/LOGO.png" type="image/x-icon">
     <title>Daniel B</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="container">
-        <nav class="navbar">
-            <div class="brand">
-                <span class="firstName">Dani</span>
-                <span class="lastName">Biju</span>
-            </div>
+    <!-- Menú de navegación -->
+	<header class="header-container">
+		<nav class="navbar-custom">
+			<div class="brand-custom">
+				<span class="firstName">Dani</span>
+				<span class="lastName">B</span>
+			</div>
+	
+			<!-- Menú hamburguesa -->
+			<div class="hamburger" id="hamburger">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</div>
+	
+			<!-- Menú de navegación -->
+			<ul class="nav-links-custom" id="nav-links">
+				<li><a href="#" onclick="loadPage('Paginas-html/home.html', 'Paginas-html/home.html')">Home</a></li>
+				<li><a href="#" onclick="loadPage('Paginas-html/Ejercicios-clase/index.html', 'Paginas-html/Ejercicios-clase/index.html')">Ejercicios de Clase</a></li>
+				<li><a href="#" onclick="loadPage('Paginas-html/gallery.html', 'Paginas-html/gallery.html')">Galería</a></li>
+				<li><a href="#" onclick="loadPage('Paginas-html/services.html', 'Paginas-html/services.html')">Servicios</a></li>
+				<li><a href="#" onclick="loadPage('Paginas-html/about.html', 'Paginas-html/about.html')">Sobre Nosotros</a></li>
+				<li><a href="#" onclick="loadPage('Paginas-html/contact.html', 'Paginas-html/contact.html')">Contáctanos</a></li>
+			</ul>
+		</nav>
+	</header>	
+	
+    <!-- Contenedor principal -->
+    <main>
+        <iframe id="contentFrame" src="/Paginas-html/home.html" frameborder="0" class="iframe-content"></iframe>
+    </main>
 
-            <!-- Checkbox for Hamburger Menu -->
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="hamburger">
-                <i class="fa fa-bars"></i>
-            </label>
+    <!-- Footer -->
+    <footer class="footer-container">
+        <p>© 2024 Daniel B - Todos los derechos reservados</p>
+    </footer>
 
-            <ul class="nav-links">
-                <li><a href="#home" onclick="showSection('home')">Home</a></li>
-                <li><a href="#gallery" onclick="showSection('gallery')">Gallery</a></li>
-                <li><a href="#services" onclick="showSection('services')">FANGAME</a></li>
-                <li><a href="#about" onclick="showSection('about')">About Us</a></li>
-                <li><a href="#contact" onclick="showSection('contact')">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Sección Home -->
-    <section id="home" class="section visible">
-        <h1>Home</h1>
-        <p>Bienvenido a la página principal.</p>
-    </section>
-
-    <!-- Sección Gallery -->
-    <section id="gallery" class="section hidden">
-        <h1>Gallery</h1>
-        <p>Aquí verás una galería de imágenes de ejemplo.</p>
-    </section>
-
-    <!-- Sección Services -->
-    <section id="services" class="section hidden">
-        <h1>Services</h1>
-        <p>Conoce nuestros servicios.</p>
-    </section>
-
-    <!-- Sección About Us -->
-    <section id="about" class="section hidden">
-        <h1>About Us</h1>
-        <p>Aprende más sobre nosotros.</p>
-    </section>
-
-    <!-- Sección Contact Us -->
-    <section id="contact" class="section hidden">
-        <h1>Contact Us</h1>
-        <p>Ponte en contacto con nosotros.</p>
-    </section>
-
+    <!-- Script JavaScript -->
     <script src="script.js"></script>
-    
 </body>
 </html>
