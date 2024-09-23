@@ -131,12 +131,7 @@ body, html {
 }
 
 /* Estilos responsivos */
-@media (max-width: 768px) {
-
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
+@media (max-width: 1025px) {
 
 	.nav-links-custom {
         display: none; /* Oculta el menú por defecto en móvil */
