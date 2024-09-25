@@ -3,81 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tablas con link y listas</title>
+    <link rel="stylesheet" href="CSS-Ejercicios/Tablas-enlaces.css">
 </head>
-<style>
-        table{
-        border: 1px red solid;
-        background-color: black;
-    }
-    td{
-        border: 1px rgb(0, 4, 255) solid;
-        padding: 20px;
-        background-color: aqua;
-        color: red;
-        font-size: 2rem;
-        border-radius: 10px
 
-    }
-    h1{
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        margin: 2rem;
-        border: 1px black solid;
-        padding: 10px;
-        max-width: 260px;
-        text-align: center;
-        color: chocolate;
-        background-color: tan;
-        border-radius: 10px
-    }
-    a{
-        text-decoration: none;
-        color: black;
-        padding: 2px;
-        border: 1px  black solid;
-        border-radius: 10px;
-        background-color: rgb(186, 218, 8);
-    }
-</style>
 <body>
-    <table>
-        <tr>
-            <td>Listas numerica</td>
-            <td>Listas viñeta</td>
-            <td>Lista de definicion</td>
-        </tr>
-        <tr>
-            <td>
-                <ol>
-                    <li> - Tema</li>
-                    <li> - Tema</li>
-                    <li> - Tema</li>
-                </ol>
-            </td>
-            
-            <td>
-                <Ul>
-                    <li>Flor</li>
-                    <li>Pala</li>
-                    <li>Caja</li>
-                </Ul>
-            </td>
-            <td>
-                <dl>
-                    <dt>Coffee</dt>
-                        <dd>Black hot drink</dd>
-                    <dt>Milk</dt>
-                        <dd>White cold drink</dd>
-                  </dl> 
-            
-            </td>
-        </tr>
-        <tr>
-            <td><a href="Listas-ordenadas.html">Listas ordenadas</a></td>
-            <td><a href="Listas-desordenadas.html">Listas-desordenadas</a></td>
-            <td><a href="Listas-definicion.html">Listas-definicion</a></td>
-        </tr>
-  
-    </table>
+    <main>
+        <h1>Tablas con link y listas</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Listas Numéricas</th>
+                    <th>Listas con Viñetas</th>
+                    <th>Lista de Definición</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ol>
+                            <li>Tema 1</li>
+                            <li>Tema 2</li>
+                            <li>Tema 3</li>
+                        </ol>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Flor</li>
+                            <li>Pala</li>
+                            <li>Caja</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <dl>
+                            <dt>Coffee</dt>
+                            <dd>Bebida caliente negra.</dd>
+                            <dt>Milk</dt>
+                            <dd>Bebida fría blanca.</dd>
+                        </dl>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="Listas-numeradas.html">Listas Ordenadas</a></td>
+                    <td><a href="Listas-viñetas.html">Listas Viñetas</a></td>
+                    <td><a href="Listas-definicion.html">Listas de Definición</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
 </body>
+
+
 </html>

@@ -4,169 +4,143 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tablas con clospan y rowspan</title>
+  <link rel="stylesheet" href="CSS-Ejercicios/Tablas-row-col.css">
 </head>
-<style>
-
-  
-  table{
-    border: 1px red solid;
-    margin: 10px;
-  }
-  h1{
-    font-size: 30px;
-  }
-
-  td{
-    text-align: center;
-    font-size: 30px;
-    border: 1px blue solid;
-  }
-  .rowspan{
-    background-color: yellow;
-    font-size: 35px;
-  }
-  .colspan{
-    background-color: rgb(255, 0, 162);
-    color: darkblue;
-    font-size: 35px;
-  }
-</style>
 <body>
-<div>
-
-  <table>
-    <h1>Tabla 4,5</h1>
-    <tr>
-      <td>1,1</td>
-      <td>1,2</td>
-      <td>1,3</td>
-      <td>1,4</td>
-      <td>1,5</td>
-    </tr>
-    <tr>
-      <td>2,1</td>
-      <td>2,2</td>
-      <td>2,3</td>
-      <td>2,4</td>
-      <td>2,5</td>
-    </tr>
-    <tr>
-        <td>3,1</td>
-        <td>3,2</td>
-        <td>3,3</td>
-        <td>3,4</td>
-        <td>3,5</td>
-      </tr>
-      <tr>
-        <td>4,1</td>
-        <td>4,2</td>
-        <td>4,3</td>
-        <td>4,4</td>
-        <td>4,5</td>
-      </tr>
-  </table>
-  
-  <table>
-    <h1>Tabla 4,5 con <span class="colspan">clospan</span></h1>
-    <tr>
-      <td class="colspan" colspan="5">1,1</td>
-    </tr>
-    <tr>
-      <td>2,1</td>
-      <td>2,2</td>
-      <td>2,3</td>
-      <td>2,4</td>
-      <td>2,5</td>
-    </tr>
-      <tr>
-        <td>3,1</td>
-        <td>3,2</td>
-        <td>3,3</td>
-        <td>3,4</td>
-        <td>3,5</td>
-      </tr>
-      <tr>
-        <td>4,1</td>
-        <td>4,2</td>
-        <td class="colspan" colspan="3">4,3</td>
-      </tr>
-  </table>
-  
-  <table>
-    <h1>Tabla 4,5 con <span class="rowspan">rowspan</span></h1>
-        <td>1,1</td>
-        <td>1,2</td>
-        <td>1,3</td>
-        <td>1,4</td>
-        <td class="rowspan" rowspan="5">1,5</td>
-      </tr>
-      <tr>
-        <td>2,1</td>
-        <td class="rowspan" rowspan="3">2,2</td>
-        <td>2,3</td>
-        <td>2,4</td>
-      </tr>
-      <tr>
-        <td>3,1</td>
-        <td>3,3</td>
-        <td>3,4</td>
-      </tr>
-      <tr>
-        <td>4,1</td>
-        <td>4,3</td>
-        <td>4,4</td>
-      </tr>
-    </table>
-
-    <table>
-      <h1>Tabla 4,5 combinados</h1>
-        <tr>
-          <td class="rowspan" rowspan="4">1,1</td>
-          <td>1,2</td>
-          <td>1,3</td>
-          <td>1,4</td>
-          <td>1,5</td>
-        </tr>
-        <tr>
-          <td class="colspan" colspan="3">2,2</td>
-          <td>2,3</td>
-        </tr>
-        <tr>
-          <td>3,2</td>
-          <td>3,3</td>
-          <td class="rowspan" rowspan="2">3,4</td>
-          <td>3,5</td>
-        </tr>
-        <tr>
-          <td>4,2</td>
-          <td>4,3</td>
-          <td>4,4</td>
-        </tr>
-    </table>
-
-    <table>
-      <h1>Tabla 4,4</h1>
-      <tr>
-        <td>1,1</td>
-        <td>1,2</td>
-        <td>1,3</td>
-        <td class="rowspan" rowspan="3">1,4</td>
-      </tr>
-      <tr>
-        <td>2,1</td>
-        <td>2,2</td>
-        <td>2,3</td>
-      </tr>
-      <tr>
-          <td>3,1</td>
-          <td>3,2</td>
-          <td>3,3</td>
-        </tr>
-        <tr>
-          <td colspan="4" class="colspan">4,1</td>
-        </tr>
-
-</div>
+  <div>
+      <h1>Tabla 4,5</h1>
+      <table>
+          <tr>
+              <td>1,1</td>
+              <td>1,2</td>
+              <td>1,3</td>
+              <td>1,4</td>
+              <td>1,5</td>
+          </tr>
+          <tr>
+              <td>2,1</td>
+              <td>2,2</td>
+              <td>2,3</td>
+              <td>2,4</td>
+              <td>2,5</td>
+          </tr>
+          <tr>
+              <td>3,1</td>
+              <td>3,2</td>
+              <td>3,3</td>
+              <td>3,4</td>
+              <td>3,5</td>
+          </tr>
+          <tr>
+              <td>4,1</td>
+              <td>4,2</td>
+              <td>4,3</td>
+              <td>4,4</td>
+              <td>4,5</td>
+          </tr>
+      </table>
     
+      <h1>Tabla 4,5 con <span class="colspan">colspan</span></h1>
+      <table>
+          <tr>
+              <td class="colspan" colspan="5">1,1</td>
+          </tr>
+          <tr>
+              <td>2,1</td>
+              <td>2,2</td>
+              <td>2,3</td>
+              <td>2,4</td>
+              <td>2,5</td>
+          </tr>
+          <tr>
+              <td>3,1</td>
+              <td>3,2</td>
+              <td>3,3</td>
+              <td>3,4</td>
+              <td>3,5</td>
+          </tr>
+          <tr>
+              <td>4,1</td>
+              <td>4,2</td>
+              <td class="colspan" colspan="3">4,3</td>
+          </tr>
+      </table>
+    
+      <h1>Tabla 4,5 con <span class="rowspan">rowspan</span></h1>
+      <table>
+          <tr>
+              <td>1,1</td>
+              <td>1,2</td>
+              <td>1,3</td>
+              <td>1,4</td>
+              <td class="rowspan" rowspan="5">1,5</td>
+          </tr>
+          <tr>
+              <td>2,1</td>
+              <td class="rowspan" rowspan="3">2,2</td>
+              <td>2,3</td>
+              <td>2,4</td>
+          </tr>
+          <tr>
+              <td>3,1</td>
+              <td>3,3</td>
+              <td>3,4</td>
+          </tr>
+          <tr>
+              <td>4,1</td>
+              <td>4,3</td>
+              <td>4,4</td>
+          </tr>
+      </table>
+  
+      <h1>Tabla 4,5 combinados</h1>
+      <table>
+          <tr>
+              <td class="rowspan" rowspan="4">1,1</td>
+              <td>1,2</td>
+              <td>1,3</td>
+              <td>1,4</td>
+              <td>1,5</td>
+          </tr>
+          <tr>
+              <td class="colspan" colspan="3">2,2</td>
+              <td>2,3</td>
+          </tr>
+          <tr>
+              <td>3,2</td>
+              <td>3,3</td>
+              <td class="rowspan" rowspan="2">3,4</td>
+              <td>3,5</td>
+          </tr>
+          <tr>
+              <td>4,2</td>
+              <td>4,3</td>
+              <td>4,4</td>
+          </tr>
+      </table>
+  
+      <h1>Tabla 4,4</h1>
+      <table>
+          <tr>
+              <td>1,1</td>
+              <td>1,2</td>
+              <td>1,3</td>
+              <td class="rowspan" rowspan="3">1,4</td>
+          </tr>
+          <tr>
+              <td>2,1</td>
+              <td>2,2</td>
+              <td>2,3</td>
+          </tr>
+          <tr>
+              <td>3,1</td>
+              <td>3,2</td>
+              <td>3,3</td>
+          </tr>
+          <tr>
+              <td colspan="4" class="colspan">4,1</td>
+          </tr>
+      </table>
+  </div>
   </body>
-  </html>
+</html>
