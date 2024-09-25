@@ -21,7 +21,7 @@ function loadPage(page, activeLink) {
 
 // Inicializa la página cargando el contenido por defecto
 document.addEventListener('DOMContentLoaded', function () {
-    loadPage('Paginas-html/home.html', 'Paginas-html/home.html'); // Carga la sección por defecto
+    loadPage('home.html', 'home.html'); // Carga la sección por defecto
 });
 
 document.getElementById('hamburger').addEventListener('click', function() {
