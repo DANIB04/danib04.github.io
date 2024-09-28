@@ -8,44 +8,38 @@
     <link rel="stylesheet" href="CSS/Index.css">
 </head>
 <body>
-    <!-- Menú de navegación -->
-	<header class="header-container">
-		<nav class="navbar-custom">
-			<div class="brand-custom">
-				<span class="firstName">Dani</span>
-				<span class="lastName">B</span>
-			</div>
-	
-			<!-- Menú hamburguesa -->
-			<div class="hamburger" id="hamburger">
-				<div class="line"></div>
-				<div class="line"></div>
-				<div class="line"></div>
-			</div>
-	
-			<!-- Menú de navegación -->
-			<ul class="nav-links-custom" id="nav-links">
-				<li><a href="#" onclick="loadPage('home.html', 'home.html')">Home</a></li>
-				<li><a href="#" onclick="loadPage('Paginas-html/index-Ejercicios.html', 'Paginas-html/index-Ejercicios.html')">Ejercicios de Clase</a></li>
-				<li><a href="#" onclick="loadPage('Paginas-html/gallery.html', 'Paginas-html/gallery.html')">Galería</a></li>
-				<li><a href="#" onclick="loadPage('Paginas-html/services.html', 'Paginas-html/services.html')">Servicios</a></li>
-				<li><a href="#" onclick="loadPage('Paginas-html/about.html', 'Paginas-html/about.html')">Sobre Nosotros</a></li>
-				<li><a href="#" onclick="loadPage('Paginas-html/contact.html', 'Paginas-html/contact.html')">Contáctanos</a></li>
-			</ul>
-		</nav>
-	</header>	
-	
-    <!-- Contenedor principal -->
-    <main>
-        <iframe id="contentFrame" src="home.html" frameborder="0" class="iframe-content"></iframe>
-    </main>
 
-    <!-- Footer -->
-    <footer class="footer-container">
-        <p>© 2024 Daniel B - Todos los derechos reservados</p>
-    </footer>
+<header class="header-container">
+    <nav class="navbar-custom">
+        <div class="brand-custom">
+            <span class="firstName">Dani</span>
+            <span class="lastName">B</span>
+        </div>
 
-    <!-- Script JavaScript -->
-    <script src="JS/Index.js"></script>
+        <div class="hamburger" id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <ul class="nav-links-custom" id="nav-links">
+            <li><a onclick="loadPage('home.html', 'home.html')">Home</a></li>
+            <li><a onclick="loadPage('Paginas-html/index-Ejercicios.html', 'Paginas-html/index-Ejercicios.html')">Ejercicios de Clase</a></li>
+            <li><a onclick="loadPage('Paginas-html/gallery.html', 'Paginas-html/gallery.html')">Galería</a></li>
+            <li><a onclick="loadPage('Paginas-html/services.html', 'Paginas-html/services.html')">Servicios</a></li>
+            <li><a onclick="loadPage('Paginas-html/about.html', 'Paginas-html/about.html')">Sobre Nosotros</a></li>
+            <li><a onclick="loadPage('Paginas-html/contact.html', 'Paginas-html/contact.html')">Contáctanos</a></li>
+        </ul>
+    </nav>
+</header>   
+
+<main>
+    <iframe id="contentFrame" src="home.html" frameborder="0" class="iframe-content"></iframe>
+</main>
+<footer class="footer-container">
+    <p>© 2024 Daniel B - Todos los derechos reservados</p>
+</footer>
+
+<script src="JS/Index.js"></script>
 </body>
 </html>
