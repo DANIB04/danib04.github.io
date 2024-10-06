@@ -1,58 +1,105 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #eef2f3;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body, html {
+    height: 100%;
+    scroll-behavior: smooth;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
-ul, ol {
-    padding-left: 20px;
+ul, ol, dl {
+    margin-left: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Borde para las listas */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 15px;
+    margin-bottom: 20px; /* Espacio entre listas */
 }
 
 ul {
-    list-style-type: square;
-    margin-bottom: 20px;
+    list-style-type: none;
+}
+
+ul li {
+    font-size: 22px;
+    color: #FF3D00;
+    margin-bottom: 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+ul li:hover {
+    color: #34c759;
 }
 
 ol {
     list-style-type: decimal;
-    margin-bottom: 20px;
+    margin-left: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde para listas ordenadas */
+    padding: 10px;
+    border-radius: 5px;
 }
 
-li {
-    font-size: 1.2em;
-    color: #34495e;
+ol li {
+    font-size: 20px;
+    color: #ffdd00;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 dl {
-    background-color: #fff;
-    border: 2px solid #bdc3c7;
-    border-radius: 8px;
-    padding: 10px 20px;
-    margin: 10px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    border: 1px dashed rgba(255, 255, 255, 0.2); /* Borde para las definiciones */
+    padding: 10px;
+    border-radius: 5px;
 }
 
 dt {
+    font-size: 18px;
     font-weight: bold;
-    color: #2980b9;
+    color: #00aaff;
     margin-top: 10px;
 }
 
 dd {
+    font-size: 16px;
+    color: #ffffff;
     margin-left: 20px;
-    color: #7f8c8d;
-    font-size: 1em;
+    line-height: 1.5;
 }
 
-ul ul, ol ol {
-    padding-left: 30px;
-    list-style-type: circle; 
-}
-
-h1, h2, h3 {
-    color: #2980b9;
+/* Título centrado y estilizado */
+h1 {
+    color: #FF3D00;
+    font-size: 44px;
+    margin-bottom: 30px;
     text-align: center;
-    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Diseño adaptable */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    ul li, ol li, dt {
+        font-size: 18px;
+    }
+
+    dd {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
 }
