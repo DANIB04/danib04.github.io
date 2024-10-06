@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación de Malware</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+        nav {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 100px 20px 20px 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px 8px 0 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+        @keyframes floating {
+            0% { transform: translatey(0); }
+            50% { transform: translatey(-5px); }
+            100% { transform: translatey(0); }
+        }
+        .floating {
+            animation: floating 3s infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#virus">Virus</a>
+        <a href="#gusano">Gusano</a>
+        <a href="#troyano">Troyano</a>
+        <a href="#spyware">Spyware</a>
+        <a href="#ransomware">Ransomware</a>
+    </nav>
+
+    <h1>Presentación de Malware</h1>
+    <div class="container" id="malware-container"></div>
+
+    <div class="footer">
+        <p>© 2024 Presentación de Malware</p>
+    </div>
+
+    <script>
+        const malwareData = [
+            {
+                id: "virus",
+                name: "Virus",
+                description: "El Storm Worm es un virus que se propagó a través de correos electrónicos falsos en 2007, infectando millones de computadoras y generando un gran tráfico de spam.",
+                reference: "Symantec. (2007). Storm Worm: An Overview. Conseguido de [Symantec](https://www.symantec.com).",
+                image: "https://via.placeholder.com/300x200?text=Virus"
+            },
+            {
+                id: "gusano",
+                name: "Gusano",
+                description: "El Blaster Worm es un gusano que se propagó a través de una vulnerabilidad en Windows en 2003, afectando a cientos de miles de computadoras.",
+                reference: "Symantec. (2003). Blaster Worm: Analysis and Impact. Conseguido de [Symantec](https://www.symantec.com).",
+                image: "https://via.placeholder.com/300x200?text=Gusano"
+            },
+            {
+                id: "troyano",
+                name: "Troyano",
+                description: "Emotet es un troyano que se utiliza para robar información y distribuir otros tipos de malware. Ha sido uno de los principales problemas de ciberseguridad en los últimos años.",
+                reference: "McAfee. (2020). Emotet: Evolution of a Malware Threat. Conseguido de [McAfee](https://www.mcafee.com).",
+                image: "https://via.placeholder.com/300x200?text=Troyano"
+            },
+            {
+                id: "spyware",
+                name: "Spyware",
+                description: "Gator es un spyware que recopila información sobre los hábitos de navegación del usuario y muestra anuncios dirigidos. Se hizo famoso a principios de los 2000.",
+                reference: "ZDNet. (2002). Gator Spyware: What You Need to Know. Conseguido de [ZDNet](https://www.zdnet.com).",
+                image: "https://via.placeholder.com/300x200?text=Spyware"
+            },
+            {
+                id: "ransomware",
+                name: "Ransomware",
+                description: "NotPetya es un ransomware que se propagó rápidamente en 2017, cifrando datos y exigiendo rescate, causando daños millonarios a empresas alrededor del mundo.",
+                reference: "Symantec. (2017). NotPetya: A Destructive Ransomware Attack. Conseguido de [Symantec](https://www.symantec.com).",
+                image: "https://via.placeholder.com/300x200?text=Ransomware"
+            }
+        ];
+
+        function displayMalware() {
+            const container = document.getElementById("malware-container");
+            malwareData.forEach(malware => {
+                const card = document.createElement("div");
+                card.className = "card floating";
+                card.innerHTML = `
+                    <img src="${malware.image}" alt="${malware.name}">
+                    <h2 id="${malware.id}">${malware.name}</h2>
+                    <p>${malware.description}</p>
+                    <p><small>${malware.reference}</small></p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        displayMalware();
+    </script>
+</body>
+</html>
