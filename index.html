@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presentación sobre Tipos de Virus Informáticos</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Poppins', Arial, sans-serif;
@@ -29,13 +30,15 @@
             text-align: center;
             position: relative;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: opacity 0.5s ease-in-out;
             opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
         }
 
         .active {
             display: block;
             opacity: 1;
+            transform: scale(1);
         }
 
         .controls {
@@ -76,9 +79,11 @@
         h1, h2 {
             margin-bottom: 20px;
         }
-        p{
+
+        p {
             font-size: x-large;
         }
+
         @media (max-width: 768px) {
             .slide {
                 width: 95%;
@@ -95,11 +100,12 @@
 </head>
 <body>
 
-    <!-- Presentación -->
-    <div id="slide-1" class="slide active">
-        <h1>Tipos de Virus Informáticos</h1>
-        <h2>Presentación Dinámica</h2>
-    </div>
+    <section>
+        <div id="slide-1" class="slide active">
+            <h1>Tipos de Virus Informáticos</h1>
+            <h2>Presentación Dinámica</h2>
+        </div>
+    </section>
 
     <div id="slide-2" class="slide">
         <h2>1. Virus</h2>
@@ -112,7 +118,7 @@
     <div id="slide-3" class="slide">
         <h2>2. Gusano</h2>
         <p><strong>Caso real:</strong> Blaster Worm (2003)</p>
-        <p>El gusano Blaster explotó una vulnerabilidad en Windows 2000 y XP. Tras infectar un sistema, se replicaba automáticamente, afectando a otros dispositivos conectados a la red.  <br>El gusano causó grandes interrupciones, obligando a Microsoft a emitir un parche de emergencia.</p>
+        <p>El gusano Blaster explotó una vulnerabilidad en Windows 2000 y XP. Tras infectar un sistema, se replicaba automáticamente, afectando a otros dispositivos conectados a la red. <br>El gusano causó grandes interrupciones, obligando a Microsoft a emitir un parche de emergencia.</p>
         <p>Además, Blaster mostraba en algunos sistemas infectados un mensaje que culpaba a Bill Gates por los problemas, volviéndose famoso por este detalle.</p>
         <img src="https://imgs.search.brave.com/ToLkLNiafKx2ge3gLovovE3rPc3umX-RT7sEmwLTEpY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/Y29tcHV0ZXJob3ku/Y29tL3NpdGVzL25h/dmkuYXhlbHNwcmlu/Z2VyLmVzL3B1Ymxp/Yy9tZWRpYS9pbWFn/ZS8yMDIyLzA4L2d1/c2Fuby0yNzgzMDE5/LmpwZz90Zj0zODQw/eA" alt="Blaster Worm">
     </div>
@@ -120,27 +126,27 @@
     <div id="slide-4" class="slide">
         <h2>3. Troyano</h2>
         <p><strong>Caso real:</strong> Emotet (2014)</p>
-        <p>El troyano Emotet inicialmente comenzó como un malware bancario, diseñado para robar credenciales financieras. Más tarde,  <br>evolucionó para convertirse en una plataforma para distribuir otros tipos de malware, como ransomware.</p>
+        <p>El troyano Emotet inicialmente comenzó como un malware bancario, diseñado para robar credenciales financieras. Más tarde, <br>evolucionó para convertirse en una plataforma para distribuir otros tipos de malware, como ransomware.</p>
         <p>Emotet fue responsable de múltiples ataques a gobiernos y empresas, causando grandes pérdidas económicas. En 2021, una operación internacional logró desmantelar la infraestructura de este troyano.</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Emotet_Screenshot.png" alt="Emotet">
+        <img src="https://imgs.search.brave.com/okMkozH83FgHdfiOVAx1pNUVLH3uieZ7XMKXecl_ZHg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9kb2N1/bWVudHMudHJlbmRt/aWNyby5jb20vaW1h/Z2VzL1RFeC9hcnRp/Y2xlcy9Mb2NrQml0/LXdlYi10aHVtYi1O/S0p5b3BWLmpwZw" alt="Emotet">
     </div>
     
     <div id="slide-5" class="slide">
         <h2>4. Spyware</h2>
         <p><strong>Caso real:</strong> Gator (2002)</p>
         <p>Gator, también conocido como Claria, fue uno de los primeros spyware que monitoreaba la actividad en línea de los usuarios sin su consentimiento. <br> Gator recopilaba datos de navegación para mostrar anuncios personalizados, generando ingresos mediante publicidad.</p>
-        <p>Aunque era presentado como un "administrador de contraseñas", su verdadera función era el espionaje, lo que generó preocupación entre los usuarios y expertos en seguridad.</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Gator_Spyware.png" alt="Gator Spyware">
+        <p>Aunque era presentado como un "administrador de contraseñas", su verdadera función era el espionaje, lo que generó preocupación entre los usuarios y expertos en seguridad.
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1b0accbc-b28d-4e39-9a7b-de3cea78822c/dfvwwby-652d6fd6-a0d1-4541-8866-ae197dd9eb80.png" alt="Gator Spyware">
+        </p>
     </div>
     
     <div id="slide-6" class="slide">
         <h2>5. Botnet</h2>
         <p><strong>Caso real:</strong> Rustock (2006)</p>
-        <p>Rustock fue una de las botnets más grandes y activas, formada por cientos de miles de ordenadores infectados. Se destacó por enviar hasta 30 mil millones  <br> de correos electrónicos de spam cada día, principalmente relacionados con la venta de medicamentos falsificados.</p>
+        <p>Rustock fue una de las botnets más grandes y activas, formada por cientos de miles de ordenadores infectados. Se destacó por enviar hasta 30 mil millones de correos electrónicos de spam cada día, principalmente relacionados con la venta de medicamentos falsificados.</p>
         <p>Rustock operó durante varios años hasta que en 2011, las fuerzas de seguridad junto a empresas tecnológicas lograron desmantelar la red de servidores que controlaban esta botnet.</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Rustock_Botnet.png" alt="Rustock Botnet">
+        <img src="https://th.bing.com/th/id/OIP.x07CrwvnRRiq3IKvCCiZygHaE8?rs=1&pid=ImgDetMain" alt="Rustock Botnet">
     </div>
-    
 
     <div class="controls">
         <button id="prevButton">Anterior</button>
@@ -155,10 +161,12 @@
             slides.forEach((slide, i) => {
                 slide.classList.remove('active');
                 slide.style.opacity = '0';
+                slide.style.transform = 'scale(0.9)';
                 if (i === index) {
                     setTimeout(() => {
                         slide.classList.add('active');
                         slide.style.opacity = '1';
+                        slide.style.transform = 'scale(1)';
                     }, 200);
                 }
             });
