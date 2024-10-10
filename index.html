@@ -3,125 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentación de Malware</title>
+    <title>Presentación sobre Tipos de Virus Informáticos</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #4a90e2, #9013fe);
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-top: 20px;
-        }
-
-        .container {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            margin: 100px 20px 20px 20px;
-        }
-        .card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin: 15px;
-            padding: 20px;
-            width: 300px;
-            transition: transform 0.2s;
-            position: relative;
+            height: 100vh;
+            color: #fff;
             overflow: hidden;
         }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        .card img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px 8px 0 0;
-        }
-        .footer {
+
+        .slide {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 80%;
             text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        .active {
+            display: block;
+            opacity: 1;
+        }
+
+        .controls {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            background-color: #61dafb;
+            color: #282c34;
+            cursor: pointer;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #21a1f1;
+            transform: translateY(-3px);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
             margin-top: 20px;
-            color: #777;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
-        @keyframes floating {
-            0% { transform: translatey(0); }
-            50% { transform: translatey(-5px); }
-            100% { transform: translatey(0); }
+
+        h1, h2 {
+            margin-bottom: 20px;
         }
-        .floating {
-            animation: floating 3s infinite;
+        p{
+            font-size: x-large;
+        }
+        @media (max-width: 768px) {
+            .slide {
+                width: 95%;
+                padding: 20px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Presentación -->
+    <div id="slide-1" class="slide active">
+        <h1>Tipos de Virus Informáticos</h1>
+        <h2>Presentación Dinámica</h2>
+    </div>
 
-    <h1>Presentación de Malware</h1>
-    <div class="container" id="malware-container"></div>
+    <div id="slide-2" class="slide">
+        <h2>1. Virus</h2>
+        <p><strong>Caso real:</strong> Storm Worm (2007)</p>
+        <p>El Storm Worm se propagó a través de correos electrónicos con el asunto "230 personas mueren en la tormenta". Cuando el usuario abría el archivo adjunto, su equipo quedaba infectado. <br> Posteriormente, los ordenadores infectados pasaban a formar parte de una botnet que los hackers podían controlar remotamente.</p>
+        <p>Este virus infectó miles de dispositivos, siendo utilizado para enviar grandes cantidades de spam y realizar ataques distribuidos de denegación de servicio (DDoS).</p>
+        <img src="https://imgs.search.brave.com/_LebFavWzl_6xvzZ662PHuT2Aoc3IlxeD2Ll09qsfKY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vZGVyZWNo/b2RlbGFyZWQuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDIw/LzAxL3N0b3JtLW1h/bHdhcmUtZGVyZWNo/b2RlbGFyZWQuanBn/P3Jlc2l6ZT0xMDY4/LDcxMiZzc2w9MQ" alt="Storm Worm">
+    </div>
+    
+    <div id="slide-3" class="slide">
+        <h2>2. Gusano</h2>
+        <p><strong>Caso real:</strong> Blaster Worm (2003)</p>
+        <p>El gusano Blaster explotó una vulnerabilidad en Windows 2000 y XP. Tras infectar un sistema, se replicaba automáticamente, afectando a otros dispositivos conectados a la red.  <br>El gusano causó grandes interrupciones, obligando a Microsoft a emitir un parche de emergencia.</p>
+        <p>Además, Blaster mostraba en algunos sistemas infectados un mensaje que culpaba a Bill Gates por los problemas, volviéndose famoso por este detalle.</p>
+        <img src="https://imgs.search.brave.com/ToLkLNiafKx2ge3gLovovE3rPc3umX-RT7sEmwLTEpY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/Y29tcHV0ZXJob3ku/Y29tL3NpdGVzL25h/dmkuYXhlbHNwcmlu/Z2VyLmVzL3B1Ymxp/Yy9tZWRpYS9pbWFn/ZS8yMDIyLzA4L2d1/c2Fuby0yNzgzMDE5/LmpwZz90Zj0zODQw/eA" alt="Blaster Worm">
+    </div>
+    
+    <div id="slide-4" class="slide">
+        <h2>3. Troyano</h2>
+        <p><strong>Caso real:</strong> Emotet (2014)</p>
+        <p>El troyano Emotet inicialmente comenzó como un malware bancario, diseñado para robar credenciales financieras. Más tarde,  <br>evolucionó para convertirse en una plataforma para distribuir otros tipos de malware, como ransomware.</p>
+        <p>Emotet fue responsable de múltiples ataques a gobiernos y empresas, causando grandes pérdidas económicas. En 2021, una operación internacional logró desmantelar la infraestructura de este troyano.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Emotet_Screenshot.png" alt="Emotet">
+    </div>
+    
+    <div id="slide-5" class="slide">
+        <h2>4. Spyware</h2>
+        <p><strong>Caso real:</strong> Gator (2002)</p>
+        <p>Gator, también conocido como Claria, fue uno de los primeros spyware que monitoreaba la actividad en línea de los usuarios sin su consentimiento. <br> Gator recopilaba datos de navegación para mostrar anuncios personalizados, generando ingresos mediante publicidad.</p>
+        <p>Aunque era presentado como un "administrador de contraseñas", su verdadera función era el espionaje, lo que generó preocupación entre los usuarios y expertos en seguridad.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Gator_Spyware.png" alt="Gator Spyware">
+    </div>
+    
+    <div id="slide-6" class="slide">
+        <h2>5. Botnet</h2>
+        <p><strong>Caso real:</strong> Rustock (2006)</p>
+        <p>Rustock fue una de las botnets más grandes y activas, formada por cientos de miles de ordenadores infectados. Se destacó por enviar hasta 30 mil millones  <br> de correos electrónicos de spam cada día, principalmente relacionados con la venta de medicamentos falsificados.</p>
+        <p>Rustock operó durante varios años hasta que en 2011, las fuerzas de seguridad junto a empresas tecnológicas lograron desmantelar la red de servidores que controlaban esta botnet.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Rustock_Botnet.png" alt="Rustock Botnet">
+    </div>
+    
 
-    <div class="footer">
-        <p>© 2024 Presentación de Malware</p>
+    <div class="controls">
+        <button id="prevButton">Anterior</button>
+        <button id="nextButton">Siguiente</button>
     </div>
 
     <script>
-        const malwareData = [
-            {
-                id: "virus",
-                name: "Virus",
-                description: "El Storm Worm es un virus que se propagó a través de correos electrónicos falsos en 2007, infectando millones de computadoras y generando un gran tráfico de spam.",
-                reference: "Symantec. (2007). Storm Worm: An Overview. Conseguido de [Symantec](https://www.symantec.com).",
-                image: "https://via.placeholder.com/300x200?text=Virus"
-            },
-            {
-                id: "gusano",
-                name: "Gusano",
-                description: "El Blaster Worm es un gusano que se propagó a través de una vulnerabilidad en Windows en 2003, afectando a cientos de miles de computadoras.",
-                reference: "Symantec. (2003). Blaster Worm: Analysis and Impact. Conseguido de [Symantec](https://www.symantec.com).",
-                image: "https://via.placeholder.com/300x200?text=Gusano"
-            },
-            {
-                id: "troyano",
-                name: "Troyano",
-                description: "Emotet es un troyano que se utiliza para robar información y distribuir otros tipos de malware. Ha sido uno de los principales problemas de ciberseguridad en los últimos años.",
-                reference: "McAfee. (2020). Emotet: Evolution of a Malware Threat. Conseguido de [McAfee](https://www.mcafee.com).",
-                image: "https://via.placeholder.com/300x200?text=Troyano"
-            },
-            {
-                id: "spyware",
-                name: "Spyware",
-                description: "Gator es un spyware que recopila información sobre los hábitos de navegación del usuario y muestra anuncios dirigidos. Se hizo famoso a principios de los 2000.",
-                reference: "ZDNet. (2002). Gator Spyware: What You Need to Know. Conseguido de [ZDNet](https://www.zdnet.com).",
-                image: "https://via.placeholder.com/300x200?text=Spyware"
-            },
-            {
-                id: "ransomware",
-                name: "Ransomware",
-                description: "NotPetya es un ransomware que se propagó rápidamente en 2017, cifrando datos y exigiendo rescate, causando daños millonarios a empresas alrededor del mundo.",
-                reference: "Symantec. (2017). NotPetya: A Destructive Ransomware Attack. Conseguido de [Symantec](https://www.symantec.com).",
-                image: "https://via.placeholder.com/300x200?text=Ransomware"
-            }
-        ];
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
 
-        function displayMalware() {
-            const container = document.getElementById("malware-container");
-            malwareData.forEach(malware => {
-                const card = document.createElement("div");
-                card.className = "card floating";
-                card.innerHTML = `
-                    <img src="${malware.image}" alt="${malware.name}">
-                    <h2 id="${malware.id}">${malware.name}</h2>
-                    <p>${malware.description}</p>
-                    <p><small>${malware.reference}</small></p>
-                `;
-                container.appendChild(card);
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                slide.style.opacity = '0';
+                if (i === index) {
+                    setTimeout(() => {
+                        slide.classList.add('active');
+                        slide.style.opacity = '1';
+                    }, 200);
+                }
             });
         }
 
-        displayMalware();
+        document.getElementById('nextButton').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('prevButton').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Inicializa la primera diapositiva visible
+        showSlide(currentSlide);
     </script>
+
 </body>
 </html>
