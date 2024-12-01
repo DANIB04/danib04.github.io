@@ -1,0 +1,307 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    margin-top: 20px;
+    padding: 10px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #2a2a2a, #1c1c1c);
+    color: #fff;
+}
+
+nav {
+    background: linear-gradient(90deg, #141414 0%, #1f1f1f 100%);
+    padding: 15px 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 2px solid rgba(0, 255, 255, 0.5);
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 255, 255, 0.8);
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav a span {
+    color: #ff005a;
+}
+
+nav a:hover {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.navbar {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Fondo animado del navbar */
+nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.2) 0%, transparent 80%);
+    z-index: -1;
+    filter: blur(30px);
+    animation: glow 6s infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Control de botones */
+.controls {
+    display: flex;
+    justify-content: center; /* Centra los botones */
+    gap: 20px; /* Espaciado entre los botones */
+    margin-top: 60px; /* Espaciado superior */
+    margin-bottom: 30px; /* Espaciado inferior */
+}
+
+button {
+    background-color: #00ffff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00b8b8;
+}
+
+/* Específicos para los botones de ordenar */
+button#sort-available {
+    background-color: #28a745; /* Verde */
+}
+
+button#sort-available:hover {
+    background-color: #218838; /* Verde oscuro */
+}
+
+button#sort-occupied {
+    background-color: #dc3545; /* Rojo */
+}
+
+button#sort-occupied:hover {
+    background-color: #c82333; /* Rojo oscuro */
+}
+
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a:hover {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+/* Main Container */
+.map-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 30px 20px;
+}
+
+.computer {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.computer:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 255, 255, 0.3);
+}
+
+.computer h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.computer p {
+    margin-bottom: 10px;
+}
+
+/* Status indicators */
+.status {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.status.available {
+    background-color: #28a745;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.3);
+}
+
+.status.occupied {
+    background-color: #dc3545;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+}
+
+/* Reservation Section */
+.reservations {
+    text-align: center;
+    margin: 40px 0;
+}
+
+#open-reservation-form {
+    background-color: #00ffff;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
+}
+
+#open-reservation-form:hover {
+    background-color: #00b8b8;
+}
+
+/* Reservation Form */
+.reservation-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #111;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.5);
+}
+
+.reservation-form h3 {
+    margin-bottom: 20px;
+}
+
+.reservation-form input,
+.reservation-form select {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+button {
+    background-color: #28a745;
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+button[type="button"] {
+    background-color: #dc3545;
+}
+
+button:hover {
+    background-color: #006400;
+}
+
+/* Show reservation data in computers */
+.computer .reservation-info {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.computer .reservation-info span {
+    display: block;
+    margin-top: 5px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #111;
+    color: #00ffff;
+}
+
+footer span {
+    color: #ff005a;
+}
