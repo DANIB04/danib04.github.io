@@ -128,8 +128,9 @@ main{margin-top: 60px;}
     display: flex;
     background-color: #eeffff;
     position: absolute;
-    left: 42.4%;
+    justify-content: space-around;
     align-items: center ;
+    width: 100%;
 }
 
 .snip1336 {
