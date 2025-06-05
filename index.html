@@ -1,138 +1,139 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Maintenance</title>
-        <link rel="shortcut icon" href="/IMAGENES/logo.png" type="image/x-icon">
-        <link rel="stylesheet" href="CSS/index.css">
-    </head>
-
-    <style>
-        @import url("https://use.typekit.net/fqi4qje.css");
-// https://codepen.io/sethjenks/pen/KpNJZp
-// https://stackoverflow.com/questions/9630008/how-can-i-create-a-glow-around-a-rectangle-with-svg
-body {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'ethnocentric', sans-serif;
-    background: #000;
-}
-
-.bg {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.6s linear;
-    
-    &[data-loaded=true] {
-        opacity: 0.4;
+<head>
+  <meta charset="UTF-8">
+  <title>Access Console</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Estilo base */
+    body {
+      font-family: monospace;
+      font-size: 16px;
+      background-color: black;
+      color: #89E6ED;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
     }
-}
 
-.titleWrap {
-    position: relative;
-}
+    #loginScreen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      animation: fadeIn 2s ease-in-out;
+    }
 
-#text {
-    display: block;
-    overflow: visible!important;
-    filter: url(#glow);
-}
-    </style>
-    <body>
-     <img class="bg" data-src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/22914/maxresdefault.jpg"/>
-<div class="titleWrap">
-    <svg id="text" width="100%" height="210" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-        <defs>
-            <linearGradient id="text__gradient--01" x2="0%" y2="100%">
-                <stop stop-color="rgba(249,227,204,0.9)" offset="0%"/>
-                <stop stop-color="rgba(249,189,149,0.9)" offset="33%"/>
-                <stop stop-color="rgba(237,102,69,0.9)" offset="100%"/>
-            </linearGradient>
-            <linearGradient id="text__gradient--02" x2="0%" y2="100%">
-                <stop stop-color="rgba(255, 0, 148, 0.2)" offset="0%"/>
-                <stop stop-color="rgba(255, 0, 148, 0.6)" offset="33%"/>
-                <stop stop-color="rgba(255, 0, 148, 1)" offset="100%"/>
-            </linearGradient>
-            <linearGradient id="text__gradient--03" x2="0%" y2="100%">
-                <stop stop-color="rgba(255, 255, 0, 0.9)" offset="0%"/>
-                <stop stop-color="rgba(255, 255, 0, 0.9)" offset="33%"/>
-                <stop stop-color="rgba(255, 255, 0, 0.9)" offset="100%"/>
-            </linearGradient>
-            <filter id="blur">
-		        <feGaussianBlur stdDeviation="0.5" />
-	        </filter>
-            <filter id="glow">
-       <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-       <feMerge>
-         <feMergeNode in="coloredBlur"/>
-         <feMergeNode in="SourceGraphic"/>
-       </feMerge>
-     </filter>
-        </defs>
-        <g
-            id="text__textWrap"
-            stroke-width="3"
-            font-size="120"
-            font-family="ethnocentric"           
-            font-weight="400"
-            fill="transparent"
-           
-        >
-            <g class='svgtext' id='text__textWrap01'>
-                <text stroke="url(#text__gradient--02)" text-anchor="middle" x="50%" y="84" >
-                    This            
-                </text>
-                <text stroke="url(#text__gradient--02)" text-anchor="middle" x="50%" y="190" >
-                    MAY 26      
-                </text>
-            </g>
-            <g class='svgtext' id='text__textWrap02'>
-                <text stroke="url(#text__gradient--01)" text-anchor="middle" x="50%" y="84" >
-                    This            
-                </text>
-                <text stroke="url(#text__gradient--01)" text-anchor="middle" x="50%" y="190" >
-                    MAY 26           
-                </text>
-            </g>
-            <g class='svgtext' id='text__textWrap03'>
-                <text stroke="url(#text__gradient--03)" text-anchor="middle" x="50%" y="84" >
-                    This            
-                </text>
-                <text stroke="url(#text__gradient--03)" text-anchor="middle" x="50%" y="190" >
-                    MAY 26      
-                </text>
-            </g>
-            <g class='svgtext' id='text__textWrap04'>
-                <text stroke="url(#text__gradient--01)" text-anchor="middle" x="50%" y="84" >
-                    This            
-                </text>
-                <text stroke="url(#text__gradient--01)" text-anchor="middle" x="50%" y="190" >
-                    MAY 26        
-                </text>
-            </g>
-            <g class='svgtext' id='text__textWrap05' >
-                <text stroke="url(#gradient)" text-anchor="middle" x="50%" y="84" >
-                    This            
-                </text>
-                <text stroke="url(#gradient)" text-anchor="middle" x="50%" y="190" >
-                    MAY 26     
-                </text>
-            </g>
-        </g>  
-    </svg>
-</div>
-        <script src="main.js"></script>
-	<script src="https://unpkg.com/popmotion@8.1.7/dist/popmotion.xl.min.js"></script>
-    </body>
+    input[type="password"] {
+      background: black;
+      color: #89E6ED;
+      border: 1px solid #89E6ED;
+      padding: 8px;
+      width: 80%;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 10px;
+      background: #89E6ED;
+      color: black;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    #error {
+      color: red;
+      margin-top: 10px;
+    }
+
+    .welcome-message {
+      color: #89E6ED;
+      text-align: center;
+      font-size: 18px;
+      margin-top: 40vh;
+      animation: pulse 2s infinite, fadeIn 1s ease-in-out;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.02); }
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; transform: scale(0.9); }
+    }
+
+    /* Responsive design */
+    @media (max-width: 600px) {
+      body {
+        font-size: 14px;
+      }
+
+      input[type="password"] {
+        width: 90%;
+      }
+
+      .welcome-message {
+        font-size: 16px;
+      }
+
+      button {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loginScreen">
+    <label for="password">Enter Access Code:</label>
+    <input type="password" id="password" autocomplete="off">
+    <button onclick="checkPassword()">Access</button>
+    <p id="error"></p>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById('password').value;
+      const error = document.getElementById('error');
+
+      if (password === 'dani') { // Cambia aquí la clave
+        error.textContent = '';
+        const loginScreen = document.getElementById('loginScreen');
+        loginScreen.style.animation = 'fadeOut 1s forwards';
+
+        setTimeout(() => {
+          loginScreen.style.display = 'none';
+
+          const welcome = document.createElement('div');
+          welcome.className = 'welcome-message';
+          welcome.textContent = 'Access granted. Initializing session...';
+          document.body.appendChild(welcome);
+
+          setTimeout(() => {
+            window.location.href = 'nextpage.html'; // Cambia aquí el destino
+          }, 3000);
+        }, 900);
+      } else {
+        error.textContent = 'Invalid access code.';
+      }
+    }
+  </script>
+
+</body>
 </html>
