@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TaskFlow | Gestor de Tareas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/projects/project-1.css') }}" />
+</head>
+<body>
+    <div class="glitch-bg"></div>
+  <div class="container">
+    <header>
+      <h1>TaskFlow</h1>
+      <p>Organiza tu día con eficiencia</p>
+    </header>
+
+    <!-- Formulario de nueva tarea -->
+    <section class="add-task" autocomplete="off">
+      <input type="text" id="task-input" placeholder="Escribe una nueva tarea..." autocomplete="off" />
+      <input type="date" id="task-date" />
+      <select id="category-select">
+        {% for cat in categories %}
+          <option value="{{ cat.id }}">{{ cat.name }}</option>
+        {% endfor %}
+      </select>
+      <button id="add-task-btn">➕ Añadir</button>
+    </section>
+
+    <!-- Gestión de categorías -->
+    <section class="categories">
+      <h3>Categorías</h3>
+      <div class="category-list" id="category-list">
+        {% for cat in categories %}
+          <div class="category-tag" data-id="{{ cat.id }}">
+            [{{ cat.name }}] <span class="delete">×</span>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="add-category">
+        <input type="text" id="new-category" placeholder="Nueva categoría" autocomplete="off"/>
+        <button id="add-category-btn">+</button>
+      </div>
+    </section>
+
+    <!-- Filtros y lista de tareas -->
+    <section class="tasks">
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        <button class="filter-btn" data-filter="pending">Pendientes</button>
+        <button class="filter-btn" data-filter="completed">Completadas</button>
+      </div>
+      <ul id="task-list" class="task-list">
+        {% for task in tasks %}
+          <li class="task-item {% if task.completed %}completed{% endif %}" 
+              data-id="{{ task.id }}" draggable="true">
+            <input type="checkbox" {% if task.completed %}checked{% endif %} />
+            <div class="task-content">
+              <div class="task-title">{{ task.title }}</div>
+              <div class="task-meta">
+                <span class="task-category">[{{ task.category.name }}]</span>
+                {% if task.due_date %}
+                  <span class="time-left {% if task.due_date < date.today() %}red{% elif task.due_date == date.today() %}red{% elif (task.due_date - date.today()).days <= 3 %}yellow{% else %}green{% endif %}">
+                    {{ (task.due_date - date.today()).days }} días
+                  </span>
+                {% else %}
+                  <span class="time-left gray">Sin fecha</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="task-actions">
+              <button class="edit">✎</button>
+              <button class="delete">🗑</button>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+    <script src="/static/JS/projects/project-1.js"></script>
+</body>
+</html>

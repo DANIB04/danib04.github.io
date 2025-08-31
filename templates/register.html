@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyberpunk Registration</title>
+    <link rel="shortcut icon" href="/static/IMG/Logo's/LOGO.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/CSS/login-register.css">
+</head>
+<body>
+    <div class="terminal-container">
+        <h2>NEW USER REGISTRY 🧾</h2>
+        {% if error %}
+            <p class="error-msg">[ERROR] {{ error }}</p>
+        {% endif %}
+        <form method="post" autocomplete="off">
+            <label for="username">> CREATE USERNAME</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">> SET PASSWORD</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="security_code">> ENTER SECURITY CODE</label>
+            <input type="text" id="security_code" name="security_code" required>
+
+            <button type="submit">REGISTER</button>
+        </form>
+        <p class="nav-link">Already registered? <a href="{{ url_for('login') }}">Login</a></p>
+    </div>
+</body>
+</html>

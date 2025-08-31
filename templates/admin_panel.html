@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/static/IMG/Logo's/LOGO.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/static/CSS/admin_panel.css">
+</head>
+<body>
+    <div class="container">
+        <header class="admin-header">
+            <h1>Administration Panel</h1>
+            <p><a href="{{ url_for('home') }}" class="back-link">← Back to the game</a></p>
+        </header>
+
+        <main>
+            <section class="table-section">
+                <div class="table-wrapper">
+                    <table class="user-table">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Score</th>
+                                <th>Permissions</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in users %}
+                            <tr>
+                                <td>{{ user.username }}</td>
+                                <td>
+                                    <form action="{{ url_for('edit_score', user_id=user.id) }}" method="post" class="score-form">
+                                        <input type="number" name="score" value="{{ user.score }}" required>
+                                        <button type="submit">💾</button>
+                                    </form>
+                                </td>
+                                <td class="permissions">
+                                    <!-- ✅ Toggle de permisos -->
+                                    <form action="{{ url_for('toggle_permission', user_id=user.id, perm='can_access_tasks') }}" method="post">
+                                        <button type="submit">
+                                            {% if user.can_access_tasks %}✅ Tasks{% else %}🚫 Tasks{% endif %}
+                                        </button>
+                                    </form>
+                                    <form action="{{ url_for('toggle_permission', user_id=user.id, perm='can_access_music') }}" method="post">
+                                        <button type="submit">
+                                            {% if user.can_access_music %}✅ Music{% else %}🚫 Music{% endif %}
+                                        </button>
+                                    </form>
+                                    <form action="{{ url_for('toggle_permission', user_id=user.id, perm='can_access_scoreboard') }}" method="post">
+                                        <button type="submit">
+                                            {% if user.can_access_scoreboard %}✅ Scoreboard{% else %}🚫 Scoreboard{% endif %}
+                                        </button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="{{ url_for('delete_user', user_id=user.id) }}" method="post">
+                                        <button type="submit" onclick="return confirm('¿Eliminar usuario?')">🗑</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
