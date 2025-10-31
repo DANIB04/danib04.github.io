@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"" content="width=device-width, initial-scale=1" />
+  <title>Portafolio — Nombre Apellido</title>
+  <meta name="description" content="Portafolio profesional de Nombre Apellido — desarrollo web, diseño y soluciones digitales." />
+  <style>
+    /* --------------- Reset & variables --------------- */
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#4f46e5; /* indigo */
+      --accent-2:#06b6d4; /* teal */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max-width:1100px;
+      --ff-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--ff-sans);
+      background:linear-gradient(180deg,var(--bg),#071022 120%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:48px 20px;
+      display:flex;
+      justify-content:center;
+    }
+
+    /* --------------- Layout --------------- */
+    .container{width:100%;max-width:var(--max-width)}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:white;box-shadow:0 6px 18px rgba(79,70,229,0.14)}
+    .brand h1{font-size:18px;margin:0}
+    nav{display:flex;gap:12px}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px;font-size:14px}
+    nav a:hover{background:var(--glass);color:var(--accent)}
+
+    /* --------------- Hero --------------- */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:24px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    .intro h2{margin:0 0 8px 0;font-size:28px}
+    .intro p{margin:0;color:var(--muted)}
+    .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:10px 14px;border-radius:12px;border:0;font-weight:600;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#7c3aed);color:white}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .profile{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+    .avatar{width:120px;height:120px;border-radius:20px;background:linear-gradient(135deg,#0ea5a5,#7c3aed);display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;color:white}
+    .profile p{margin:0;color:var(--muted);font-size:14px}
+
+    /* --------------- Grid sections --------------- */
+    .grid-2{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-bottom:24px}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .project{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.02)}
+    .project h3{margin:0 0 8px 0;font-size:16px}
+    .project p{margin:0;color:var(--muted);font-size:14px}
+
+    .skills{display:flex;flex-direction:column;gap:10px}
+    .skill{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;background:rgba(255,255,255,0.02)}
+    .skill .meta{font-size:13px;color:var(--muted)}
+
+    /* --------------- Contact form --------------- */
+    form{display:flex;flex-direction:column;gap:12px}
+    label{font-size:13px;color:var(--muted)}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.05);padding:10px;border-radius:10px;color:inherit;font-size:14px}
+    textarea{min-height:110px}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* --------------- Footer --------------- */
+    footer{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}
+
+    /* --------------- Responsiveness --------------- */
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+      nav{display:none}
+    }
+
+    @media (max-width:420px){
+      body{padding:20px}
+      .logo{width:48px;height:48px}
+      .avatar{width:96px;height:96px}
+      .intro h2{font-size:22px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">NA</div>
+        <div>
+          <h1>Nombre Apellido</h1>
+          <div class="small">Desarrollador Web • Diseñador de UI • Estratega Digital</div>
+        </div>
+      </div>
+
+      <nav aria-label="Navegación principal">
+        <a href="#proyectos">Proyectos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card intro">
+          <h2>Construyo productos digitales que impulsan resultados.</h2>
+          <p>Me especializo en aplicaciones web escalables y experiencias de usuario intuitivas. Combino código limpio, diseño centrado en el usuario y métricas accionables para entregar soluciones que impactan el negocio.</p>
+          <div class="cta">
+            <button class="btn btn-primary">Ver proyecto destacado</button>
+            <button class="btn btn-outline">Descargar CV</button>
+          </div>
+
+          <div style="margin-top:18px;display:flex;gap:12px;align-items:center;">
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div class="small">Ubicación</div>
+              <div>Madrid, España</div>
+            </div>
+            <div style="width:1px;height:44px;background:rgba(255,255,255,0.03);"></div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div class="small">Experiencia</div>
+              <div>6 años — Frontend & Full-stack</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card profile">
+          <div class="avatar">NA</div>
+          <div style="font-weight:700">Nombre Apellido</div>
+          <p>Ingeniero de software con foco en interfaces modernas y rendimiento.</p>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <a class="btn btn-outline" href="#contacto">Contrátame</a>
+            <a class="btn" style="background:transparent;color:var(--muted)" href="#proyectos">Portafolio</a>
+          </div>
+        </aside>
+      </section>
+
+      <section class="grid-2">
+        <div>
+          <div class="card" id="proyectos">
+            <h2 style="margin-top:0">Proyectos</h2>
+            <p class="small">Selección de trabajos recientes — énfasis en impacto: conversiones, accesibilidad y rendimiento.</p>
+
+            <div class="projects" style="margin-top:14px">
+              <article class="project">
+                <h3>Sistema de reservas — SaaS</h3>
+                <p>Plataforma de reservas para hostelería. Mejoras en la experiencia redujeron el abandono en un 28%.</p>
+                <div style="margin-top:10px" class="small">React • Node.js • PostgreSQL</div>
+              </article>
+
+              <article class="project">
+                <h3>Dashboards de analítica</h3>
+                <p>Visualización en tiempo real para decisiones operativas. Implementación de caching y paginación.</p>
+                <div style="margin-top:10px" class="small">Vue • D3 • Redis</div>
+              </article>
+
+              <article class="project">
+                <h3>E-commerce optimizado</h3>
+                <p>Rediseño de checkout y optimización de rendimiento con reducción del TTFB y aumento en conversión.</p>
+                <div style="margin-top:10px" class="small">Next.js • Stripe • Vercel</div>
+              </article>
+
+              <article class="project">
+                <h3>Landing promocional</h3>
+                <p>Campaña de producto con A/B testing; aumento de CTR del 42% en la audiencia objetivo.</p>
+                <div style="margin-top:10px" class="small">HTML • CSS • JS</div>
+              </article>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:18px" id="sobre-mi">
+            <h2 style="margin-top:0">Sobre mí</h2>
+            <p class="small">Soy un profesional orientado a resultados: entrego código mantenible y priorizo la experiencia del usuario. Trabajo mejor con equipos cross-funcionales para convertir ideas en productos que escalan.</p>
+            <ul style="margin-top:12px;color:var(--muted)">
+              <li>Especialidades: Desarrollo front-end, arquitectura de componentes, optimización de rendimiento.</li>
+              <li>Metodologías: Agile, CI/CD, testing automatizado.</li>
+              <li>Intereses: accesibilidad, machine learning aplicado a producto, crecimiento basado en datos.</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card" id="habilidades">
+            <h3>Habilidades</h3>
+            <div class="skills" style="margin-top:12px">
+              <div class="skill"><div>JavaScript / TypeScript</div><div class="meta">Avanzado</div></div>
+              <div class="skill"><div>React / Next.js</div><div class="meta">Avanzado</div></div>
+              <div class="skill"><div>HTML & CSS (Sass, BEM)</div><div class="meta">Avanzado</div></div>
+              <div class="skill"><div>Node.js / APIs</div><div class="meta">Intermedio</div></div>
+              <div class="skill"><div>Bases de datos</div><div class="meta">Postgres / Redis</div></div>
+            </div>
+
+            <div style="margin-top:14px">
+              <h4 style="margin:0 0 8px 0">Herramientas</h4>
+              <div class="small">Git • Docker • Vercel • Figma • Jest</div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:18px" id="contacto">
+            <h3>Contacto</h3>
+            <p class="small">¿Proyecto en mente? Envíame un resumen breve y te respondo con propuesta de alcance y estimación.</p>
+            <form onsubmit="contactSubmit(event)">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" placeholder="Tu nombre" required />
+
+              <label for="email">Correo</label>
+              <input id="email" name="email" type="email" placeholder="tu@correo.com" required />
+
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" placeholder="Resumen breve del proyecto" required></textarea>
+
+              <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+            </form>
+            <div style="margin-top:12px" class="small">O: <a href="mailto:tu@correo.com" style="color:var(--accent)">tu@correo.com</a></div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Nombre Apellido — Portafolio profesional</div>
+      <div style="display:flex;gap:12px">
+        <a class="small" href="#">LinkedIn</a>
+        <a class="small" href="#">GitHub</a>
+        <a class="small" href="#">Twitter</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Small interactivity: year and fake form handler
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function contactSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      alert('Gracias, ' + (name || 'amigo') +'. He recibido tu mensaje (demo).');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
